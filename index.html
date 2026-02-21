@@ -34,19 +34,77 @@
       font-size: 0.9em;
     }
     .hero {
-  background: url("DSC00052.JPG") center/cover no-repeat;
-  color: white;
-  padding: 120px 20px;
+  position: relative;
+  height: 100vh;
+  background-image: url("DSC00052.JPG");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-overlay {
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.45),
+    rgba(0, 0, 0, 0.45)
+  );
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-content {
   text-align: center;
+  color: white;
+  max-width: 800px;
+  padding: 20px;
+}
+
+.hero h1 {
+  font-size: 42px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+
+.hero-sub {
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 30px;
+  opacity: 0.9;
+}
+
+.hero-button {
+  display: inline-block;
+  padding: 12px 28px;
+  background-color: #e85c3a;
+  color: white;
+  text-decoration: none;
+  border-radius: 30px;
+  transition: 0.3s;
+}
+
+.hero-button:hover {
+  background-color: #cc4e30;
 }
   </style>
 </head>
 <body>
-
-<header class="hero">
-  <h1>Farm&Firm かたもと</h1>
-  <p>北海道から、まっすぐ美味しい野菜を。</p>
-</header>
+  <section class="hero">
+  <div class="hero-overlay">
+    <div class="hero-content">
+      <h1>食べごろを、そのまま届ける。</h1>
+      <p class="hero-sub">
+        北海道伊達市・Farm & Firm かたもと<br>
+        完熟収穫、朝採れ出荷。
+      </p>
+      <a href="#products" class="hero-button">商品を見る</a>
+    </div>
+  </div>
+</section>
 
 <section>
   <h2>私たちについて</h2>
