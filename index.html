@@ -270,6 +270,60 @@
       .about-media img{ aspect-ratio:16/10; }
       .trust{ grid-template-columns:1fr; }
     }
+     /* ===== QUALITY SECTION ===== */
+.feature-hero{
+  padding: var(--secY) 0;
+  position: relative;
+  overflow: hidden;
+
+  background:
+    linear-gradient(to bottom, rgba(31,42,36,.35), rgba(31,42,36,.10)),
+    url("/images/feature-bg.webp");
+  background-size: cover;
+  background-position: center;
+}
+.feature-hero__catch{
+  margin: 0 0 18px;
+  color: rgba(255,255,255,.96);
+  font-weight: 800;
+  letter-spacing: .02em;
+  font-size: clamp(18px, 2vw, 28px);
+  text-shadow: 0 10px 28px rgba(0,0,0,.35);
+}
+
+.feature-cards{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(12px, 2vw, 18px);
+  margin-top: 14px;
+}
+
+.glass-card{
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,.28);
+  background: rgba(251,250,246,.72);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 18px 50px rgba(0,0,0,.16);
+  padding: 16px;
+}
+
+.glass-card img{
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+
+.feature-hero__cta{
+  margin-top: 18px;
+  display: flex;
+  gap: 10px;
+}
+
+@media (max-width: 900px){
+  .feature-cards{ grid-template-columns: 1fr; }
+}
   </style>
 </head>
 
@@ -282,62 +336,45 @@
   </section>
 
   <!-- ✅ここが「About」：styleの外＝bodyの中 -->
-  <section class="content" id="about">
-    <div class="container">
-      <div class="about-grid">
-        <div class="about-copy">
-          <p class="eyebrow">About</p>
-          <h2>私たちについて</h2>
+ <section class="feature-hero" id="quality">
+  <div class="container">
+    <p class="feature-hero__catch">健やかに育てることが、結果として美味しさになります。</p>
 
-          <p class="lead">
-            Farm &amp; Firm かたもとは、北海道でアスパラガスとカラフルミニトマトを栽培する直販農園です。<br>
-            <strong>完熟収穫・朝採れ当日出荷</strong>で、食べごろをそのままお届けします。
-          </p>
+    <div class="feature-cards">
+      <article class="glass-card">
+        <h3>健やかに育つ環境づくり</h3>
+        <img src="/images/quality-01.webp" alt="畑の環境づくりの様子" loading="lazy">
+        <p>
+          土づくりや水、日々の管理から。無理のない生育環境を整えています。
+        </p>
+      </article>
 
-          <div class="feature-grid">
-            <div class="feature">
-              <h3>完熟で収穫</h3>
-              <p>いちばんおいしい瞬間を見極めて収穫します。</p>
-            </div>
-            <div class="feature">
-              <h3>朝採れ当日出荷</h3>
-              <p>収穫したその日のうちに発送。鮮度が味になります。</p>
-            </div>
-            <div class="feature">
-              <h3>彩りのギフト</h3>
-              <p>5色のミニトマトを詰めた“宝石箱”シリーズも人気です。</p>
-            </div>
-          </div>
+      <article class="glass-card">
+        <h3>完熟収穫の美味しさ</h3>
+        <img src="/images/quality-02.webp" alt="完熟のミニトマト" loading="lazy">
+        <p>
+          樹の上でしっかり熟してから収穫。濃く、自然な風味をお届けします。
+        </p>
+      </article>
 
-          <div class="cta-row">
-            <a class="btn primary" href="#products">商品を見る</a>
-            <a class="btn ghost" href="#story">農園のストーリー</a>
-          </div>
-        </div>
-
-        <figure class="about-media">
-          <img src="/images/about-01.webp" alt="Farm & Firm かたもとの農園の風景" loading="lazy">
-          <figcaption>北海道の光と空気の中で、ゆっくり完熟させています。</figcaption>
-        </figure>
-      </div>
-
-      <div class="trust">
-        <div class="trust-item">
-          <p class="trust-head">完熟収穫</p>
-          <p class="trust-sub">食べごろ基準</p>
-        </div>
-        <div class="trust-item">
-          <p class="trust-head">当日出荷</p>
-          <p class="trust-sub">朝採れを発送</p>
-        </div>
-        <div class="trust-item">
-          <p class="trust-head">カラフル</p>
-          <p class="trust-sub">色も味も楽しい</p>
-        </div>
-      </div>
+      <article class="glass-card">
+        <h3>手作業選別と朝採れ出荷</h3>
+        <img src="/images/quality-03.webp" alt="カラフルミニトマトの詰め合わせ" loading="lazy">
+        <p>
+          一つひとつ選別し、朝採れをその日のうちに出荷。鮮度を保ったまま食卓へ。
+        </p>
+      </article>
     </div>
-  </section>
 
+    <div class="feature-hero__cta">
+      <a class="btn primary" href="https://example.com" target="_blank" rel="noopener">
+        販売サイトで購入する
+      </a>
+      <a class="btn ghost" href="#about">農園について</a>
+    </div>
+  </div>
+</section>
+  
   <footer>© 2026 Farm &amp; Firm かたもと</footer>
 </body>
 </html>
