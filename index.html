@@ -17,30 +17,30 @@ body {
 
 .hero {
   width: 100%;
-  height: 500px;   /* ← vhではなくpx固定 */
+  height: 500px;
   background-image: url("DSC00317.JPG");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 
   display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  padding-bottom: 50px;
+  align-items: flex-end;      /* 下寄せ */
+  justify-content: flex-start; /* 左寄せ */
+
+  padding-left: 100px;        /* 左余白 */
+  padding-bottom: 70px;       /* 下余白 */
 }
 
 .hero-content {
   color: white;
-  text-align: center;
-  max-width: 900px;
-  padding: 0 20px;
+  text-align: left;   /* ← 左揃えに変更 */
+  max-width: 600px;
 }
 
 .hero h1 {
-  font-size: 38px;
+  font-size: 42px;
   font-weight: 500;
-  margin: 0 0 15px 0;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
 }
 
 .hero-sub {
