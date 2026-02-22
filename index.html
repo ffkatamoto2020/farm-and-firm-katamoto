@@ -17,18 +17,23 @@ body {
 
 .hero {
   width: 100%;
-  height: 500px;
+
+  /* ここが肝：画面に合わせて伸びる + 上限下限で暴れない */
+  height: 70vh;
+  min-height: 520px;
+  max-height: 760px;
+
   background-image: url("DSC00317.JPG");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 
   display: flex;
-  align-items: flex-end;      /* 下寄せ */
-  justify-content: flex-start; /* 左寄せ */
+  align-items: flex-end;
+  justify-content: flex-start;
 
-  padding-left: 100px;        /* 左余白 */
-  padding-bottom: 70px;       /* 下余白 */
+  padding-left: 100px;
+  padding-bottom: 70px;
 }
 
 .hero-content {
