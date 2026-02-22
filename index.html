@@ -35,18 +35,18 @@ body {
   padding-bottom: 70px;
 }
 
-.hero::before{
+.hero::before {
   content: "";
   position: absolute;
   inset: 0;
   pointer-events: none;
 
   background: radial-gradient(
-    circle at left bottom,
-    rgba(0,0,0,0.45) 0%,
-    rgba(0,0,0,0.30) 25%,
-    rgba(0,0,0,0.12) 45%,
-    rgba(0,0,0,0.00) 65%
+    120% 140% at 0% 100%,
+    rgba(0,0,0,0.40) 0%,
+    rgba(0,0,0,0.28) 25%,
+    rgba(0,0,0,0.14) 45%,
+    rgba(0,0,0,0.00) 70%
   );
 }
 
@@ -54,14 +54,12 @@ body {
   position: relative;
   z-index: 1;
 
-  display: inline-block;          /* ← これが重要：幅を文字に合わせる */
-  width: fit-content;             /* ← 念のため */
-  max-width: 90%;                 /* ← 画面が狭い時の保険 */
+  display: inline-block;
+  max-width: 90%;
 
-  color: #fff;
-  background: none;
-  padding: 18px 22px;
-  border-radius: 10px;
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
 }
 
 .hero h1 {
