@@ -16,6 +16,7 @@ body {
 /* ===== HERO ===== */
 
 .hero {
+  color: #fff;
   position: relative;
   width: 100%;
   height: 70vh;
@@ -41,17 +42,25 @@ body {
   inset:0;
   pointer-events:none;
 
-  background: linear-gradient(
-    35deg,
-    rgba(0,0,0,0.42) 0%,
-    rgba(0,0,0,0.28) 12%,
-    rgba(0,0,0,0.14) 22%,
-    rgba(0,0,0,0.06) 32%,
-    rgba(0,0,0,0.00) 42%
-  );
+  /* 左下の角を起点に、中央へ向かって“細く薄くなる”扇形グラデ */
+  background:
+    conic-gradient(
+      from 300deg at 0% 100%,
+      rgba(0,0,0,0.55) 0deg,
+      rgba(0,0,0,0.30) 25deg,
+      rgba(0,0,0,0.12) 45deg,
+      rgba(0,0,0,0.00) 70deg
+    ),
+    /* 角の濃さだけ少し補強（境目をより自然に） */
+    radial-gradient(
+      circle at 0% 100%,
+      rgba(0,0,0,0.30) 0%,
+      rgba(0,0,0,0.00) 60%
+    );
 }
 
 .hero-content {
+  color: #fff;
   position: relative;
   z-index: 1;
 
@@ -64,6 +73,7 @@ body {
 }
 
 .hero h1 {
+  color: #fff;
   margin: 0;                      /* ← これで標準の余計な余白が消える */
   font-size: 38px;
   font-weight: 500;
@@ -75,6 +85,7 @@ body {
 }
 
 .hero-sub {
+  color: #fff;
   margin: 6px 0 0 0;              /* ← ここで距離を決める（6pxがおすすめ） */
   font-size: 28px;
   opacity: 0.95;
