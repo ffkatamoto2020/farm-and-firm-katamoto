@@ -270,6 +270,7 @@
       .about-media img{ aspect-ratio:16/10; }
       .trust{ grid-template-columns:1fr; }
     }
+    
      /* ===== QUALITY SECTION ===== */
 .feature-hero{
   padding: var(--secY) 0;
@@ -305,6 +306,22 @@
   backdrop-filter: blur(10px);
   box-shadow: 0 18px 50px rgba(0,0,0,.16);
   padding: 16px;
+  -webkit-backdrop-filter: blur(10px);
+}
+  
+.glass-card h3{
+  margin: 0 0 10px;
+  font-size: clamp(15px, 1.3vw, 18px);
+  line-height: 1.35;
+  font-weight: 900;
+  color: var(--text);
+}
+
+.glass-card p{
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.8;
 }
 
 .glass-card img{
