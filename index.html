@@ -16,7 +16,7 @@ body {
 /* ===== HERO ===== */
 
 .hero {
-  color: #fff;
+  color: #fff;                 /* 念のため */
   position: relative;
   width: 100%;
   height: 70vh;
@@ -34,63 +34,65 @@ body {
 
   padding-left: 60px;
   padding-bottom: 70px;
+
+  overflow: hidden;            /* ::before はみ出し防止 */
 }
 
+/* 左下の角だけ濃く → 中央へ向かって “細く” 消える影 */
 .hero::before{
   content:"";
   position:absolute;
   inset:0;
   pointer-events:none;
+  z-index:0;
 
-  /* 左下の角を起点に、中央へ向かって“細く薄くなる”扇形グラデ */
+  /* ① 左下を起点に “扇形（くさび）” で伸びていく */
   background:
     conic-gradient(
-      from 300deg at 0% 100%,
-      rgba(0,0,0,0.55) 0deg,
-      rgba(0,0,0,0.30) 25deg,
-      rgba(0,0,0,0.12) 45deg,
-      rgba(0,0,0,0.00) 70deg
-    ),
-    /* 角の濃さだけ少し補強（境目をより自然に） */
-    radial-gradient(
-      circle at 0% 100%,
-      rgba(0,0,0,0.30) 0%,
-      rgba(0,0,0,0.00) 60%
+      from 330deg at 0% 100%,
+      rgba(0,0,0,0.42) 0deg,
+      rgba(0,0,0,0.28) 18deg,
+      rgba(0,0,0,0.12) 36deg,
+      rgba(0,0,0,0.00) 60deg,
+      rgba(0,0,0,0.00) 360deg
     );
 }
 
-.hero-content {
-  color: #fff;
+/* 文字ブロック（座布団なし・文字だけ） */
+.hero-content{
   position: relative;
   z-index: 1;
 
   display: inline-block;
   max-width: 90%;
 
-  background: transparent;
+  background: none;            /* 座布団を完全に無効化 */
   padding: 0;
   border-radius: 0;
+
+  color: #fff;                 /* 念のため */
 }
 
-.hero h1 {
-  color: #fff;
-  margin: 0;                      /* ← これで標準の余計な余白が消える */
+.hero h1{
+  color:#fff;                  /* 念のため */
+  margin: 0;
   font-size: 38px;
   font-weight: 500;
   letter-spacing: 2px;
   white-space: nowrap;
+
   text-shadow:
-    0 2px 12px rgba(0,0,0,0.6),
+    0 2px 12px rgba(0,0,0,0.65),
     0 0 24px rgba(0,0,0,0.35);
 }
 
-.hero-sub {
-  color: #fff;
-  margin: 6px 0 0 0;              /* ← ここで距離を決める（6pxがおすすめ） */
-  font-size: 28px;
-  opacity: 0.95;
-  text-shadow:
-    0 2px 8px rgba(0,0,0,0.6);
+.hero-sub{
+  color:#fff;                  /* 念のため */
+  margin: 6px 0 0 0;           /* タイトルとの間隔を詰める */
+  font-size: 28px;             /* サブを大きめに */
+  opacity: 0.98;
+
+  text-shadow: 0 2px 8px rgba(0,0,0,0.65);
 }
 
 /* ===== SECTION ===== */
