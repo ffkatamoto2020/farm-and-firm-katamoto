@@ -116,6 +116,60 @@
     }
 
     /* ===== SECTION（ここに“CSSだけ”を書く）===== */
+
+  /* ==== HOW TO BUY SECTION ==== */
+
+.section.alt { background: rgba(0,0,0,0.04); }
+
+.steps { display: grid; gap: 12px; margin-top: 18px; }
+
+.step{
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  gap: 12px;
+  align-items: start;
+  background: rgba(255,255,255,0.72);
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  padding: 14px;
+  box-shadow: var(--shadow);
+}
+
+.step-num{
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  background: rgba(34, 94, 60, 0.12);
+  font-weight: 800;
+}
+
+.step h3{ margin: 0 0 6px; font-size: 18px; }
+.step p{ margin: 0; opacity: .85; line-height: 1.7; }
+
+.cta-box{
+  margin-top: 22px;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(255,255,255,0.78);
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  padding: 16px;
+  box-shadow: var(--shadow);
+}
+
+.cta-text h3{ margin: 0 0 6px; }
+.cta-text p{ margin: 0; opacity: .85; }
+
+.btn.lg{ padding: 12px 18px; }
+
+@media (max-width: 700px){
+  .cta-box{ flex-direction: column; align-items: stretch; }
+}
+    
     section.content{
       padding: var(--secY) 0;
     }
@@ -440,6 +494,48 @@
           </div>
         </div>
       </article>
+    </div>
+  </div>
+</section>
+
+<!-- ==== HOW TO BUY SECTION ==== -->
+<section id="howtobuy" class="section alt">
+  <div class="container">
+    <h2 class="section-title">ご購入の流れ</h2>
+    <p class="section-lead">EC機能は持たず、販売は外部サイトで行っています。下の手順で迷わず購入できます。</p>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <h3>販売サイトを選ぶ</h3>
+          <p>「販売サイトへ」ボタンからリンクツリーへ移動し、販売中の商品（ミニトマト／アスパラ）を選びます。</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <h3>商品を注文する</h3>
+          <p>在庫や発送予定日を確認して注文します。収穫状況に合わせて、食べごろのタイミングで出荷します。</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          <h3>届いたら、まずは素材の味を</h3>
+          <p>ミニトマトは食べ比べ、アスパラは塩ゆでだけでも香りと甘みが際立ちます。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cta-box">
+      <div class="cta-text">
+        <h3>販売中の商品はこちら</h3>
+        <p>在庫・販売先はリンクツリーにまとめています。</p>
+      </div>
+      <a class="btn primary lg" href="#" onclick="location.href=BUY_URL; return false;">販売サイトへ進む</a>
     </div>
   </div>
 </section>
