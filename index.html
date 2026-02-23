@@ -117,6 +117,20 @@
 
     /* ===== SECTION（ここに“CSSだけ”を書く）===== */
 
+    /* ==== INSTAGRAM ==== */
+.insta-grid{
+  display:grid;
+  gap:18px;
+  grid-template-columns:repeat(auto-fit, minmax(280px,1fr));
+}
+
+/* インスタ埋め込みの余白を整える（崩れ防止） */
+.instagram-media{
+  margin: 0 !important;
+  min-width: 0 !important;
+  width: 100% !important;
+}
+
     /* ==== HOW TO BUY SECTION ==== */
 
 .section.alt { background: rgba(0,0,0,0.04); }
@@ -170,6 +184,141 @@
   .cta-box{ flex-direction: column; align-items: stretch; }
 }
 
+    <!-- ==== ABOUT SECTION ==== -->
+<section id="about" class="section">
+  <div class="container">
+    <h2 class="section-title">農園について</h2>
+    <p class="section-lead">
+      北海道・伊達市の畑から。完熟のタイミングで収穫し、朝採れをその日のうちに出荷します。
+    </p>
+
+    <div class="about-grid">
+      <div class="about-card">
+        <h3>完熟収穫・当日出荷</h3>
+        <p>食べごろで収穫し、できるだけ早くお届け。味のピークを逃しません。</p>
+      </div>
+
+      <div class="about-card">
+        <h3>畑の土と水を大切に</h3>
+        <p>高品質な完熟堆肥を使い、微生物の力を活かした土づくり。地下水も活用しています。</p>
+      </div>
+
+      <div class="about-card">
+        <h3>除草剤不使用（手で除草）</h3>
+        <p>畑の環境を守るため、草は手で管理。手間をかけて品質につなげています。</p>
+      </div>
+
+      <div class="about-card">
+        <h3>自分が美味しい品種だけ</h3>
+        <p>ミニトマトは甘味だけでなく酸味の効いた品種も。栽培も収穫判断も自分で行います。</p>
+      </div>
+    </div>
+
+    <div class="cta-box">
+      <div class="cta-text">
+        <h3>販売中の商品を確認する</h3>
+        <p>在庫・販売先はリンクツリーにまとめています。</p>
+      </div>
+      <a class="btn primary lg" href="#" onclick="location.href=BUY_URL; return false;">販売サイトへ進む</a>
+    </div>
+  </div>
+</section>
+
+    <!-- ==== FAQ SECTION ==== -->
+<section id="faq" class="section alt">
+  <div class="container">
+    <h2 class="section-title">よくある質問</h2>
+    <p class="section-lead">購入前の不安が残らないよう、先にお答えします。</p>
+
+    <div class="faq">
+      <details class="faq-item">
+        <summary>いつ届きますか？</summary>
+        <p>収穫状況と販売先の案内に合わせて出荷します。基本は「食べごろで収穫 → できるだけ早く発送」です。</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>ミニトマトは甘いですか？</summary>
+        <p>甘味の強い品種だけでなく、酸味が際立つ品種も育てています。食べ比べが楽しいセットです。</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>ギフト対応はできますか？</summary>
+        <p>販売先でギフト対応がある場合があります。リンクツリーから各販売ページをご確認ください。</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>保存方法は？</summary>
+        <p>到着後は風味を見て常温／冷蔵を使い分けるのがおすすめです。商品に同梱の案内がある場合はそちらを優先してください。</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>農園の様子は見られますか？</summary>
+        <p>YouTubeで栽培の様子や裏側も公開しています。下のセクションからどうぞ。</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+    <!-- ==== INSTAGRAM SECTION ==== -->
+<section id="instagram" class="section alt">
+  <div class="container">
+    <h2 class="section-title">日々の畑の様子（Instagram）</h2>
+    <p class="section-lead">
+      収穫の様子や季節の風景を、日々更新しています。
+    </p>
+
+    <div class="insta-grid">
+
+      <!-- 投稿1 -->
+      <blockquote class="instagram-media"
+        data-instgrm-permalink="https://www.instagram.com/p/DPdgz7bAZz2/"
+        data-instgrm-version="14">
+      </blockquote>
+
+      <!-- 投稿2 -->
+      <blockquote class="instagram-media"
+        data-instgrm-permalink="https://www.instagram.com/p/DPYXNRckcFa/?img_index=1"
+        data-instgrm-version="14">
+      </blockquote>
+
+      <!-- 投稿3 -->
+      <blockquote class="instagram-media"
+        data-instgrm-permalink="https://www.instagram.com/p/DPLfQlcAP3L/?img_index=1"
+        data-instgrm-version="14">
+      </blockquote>
+
+    </div>
+
+    <div style="text-align:center; margin-top:24px;">
+      <a class="btn" href="https://instagram.com/farm_and_firm_katamoto" target="_blank" rel="noopener">
+        Instagramを見る
+      </a>
+    </div>
+  </div>
+</section>
+
+<script async src="https://www.instagram.com/embed.js"></script>
+
+    <!-- ==== YOUTUBE SECTION ==== -->
+<section id="youtube" class="section">
+  <div class="container">
+    <h2 class="section-title">栽培の様子（YouTube）</h2>
+    <p class="section-lead">
+      種まきから収穫まで、実際の栽培の様子を公開しています。
+      作っている人の顔が見えることが、いちばんの安心だと思っています。
+    </p>
+
+   <div class="youtube-box" style="text-align:center;">
+  <a class="btn primary lg"
+     href="https://www.youtube.com/@ShingoKatamoto"
+     target="_blank"
+     rel="noopener">
+     YouTubeチャンネルを見る
+  </a>
+</div>
+  </div>
+</section>
+    
     /* ==== FLOATING CTA ==== */
 
 .floating-cta{
