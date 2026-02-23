@@ -117,7 +117,7 @@
 
     /* ===== SECTION（ここに“CSSだけ”を書く）===== */
 
-  /* ==== HOW TO BUY SECTION ==== */
+    /* ==== HOW TO BUY SECTION ==== */
 
 .section.alt { background: rgba(0,0,0,0.04); }
 
@@ -169,7 +169,51 @@
 @media (max-width: 700px){
   .cta-box{ flex-direction: column; align-items: stretch; }
 }
-    
+
+    /* ==== FLOATING CTA ==== */
+
+.floating-cta{
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 9999;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 14px 18px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 800;
+  letter-spacing: .04em;
+
+  background: var(--brand);
+  color: #fff;
+
+  border: 1px solid rgba(255,255,255,.25);
+  box-shadow: 0 18px 40px rgba(0,0,0,.22);
+
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+
+.floating-cta:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 22px 46px rgba(0,0,0,.28);
+}
+
+/* スマホ */
+@media (max-width: 700px){
+  .floating-cta{
+    right: 12px;
+    bottom: 12px;
+    padding: 12px 16px;
+    font-size: 14px;
+  }
+}
+    footer{
+ 　　 padding-bottom: 90px;
+}
     section.content{
       padding: var(--secY) 0;
     }
@@ -541,5 +585,10 @@
 </section>
   
   <footer>© 2026 Farm &amp; Firm かたもと</footer>
+  
+<!-- ==== Floating CTA ==== -->
+<a class="floating-cta" href="#" onclick="location.href=BUY_URL; return false;">
+  販売サイトへ
+</a>
 </body>
 </html>
