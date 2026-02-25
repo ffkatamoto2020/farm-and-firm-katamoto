@@ -44,6 +44,108 @@
       padding:0 var(--px);
     }
 
+    /* ===== NAV ===== */
+:root{
+  --headerH: 64px;
+}
+
+.site-header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--headerH);
+  z-index: 9999;
+  background: rgba(251,250,246,.78);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(31,42,36,.10);
+}
+
+.site-header .container{
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.brand{
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 900;
+  letter-spacing: .02em;
+}
+.brand small{
+  color: var(--muted);
+  font-weight: 700;
+  letter-spacing: .08em;
+}
+
+.nav{
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.nav a{
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 800;
+  font-size: 13px;
+  padding: 8px 10px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+}
+.nav a:hover{
+  background: rgba(255,255,255,.72);
+  border-color: rgba(31,42,36,.10);
+}
+
+.nav .nav-cta{
+  background: var(--brand);
+  color: #fff;
+  box-shadow: 0 10px 24px rgba(47,91,69,.18);
+}
+.nav .nav-cta:hover{
+  background: var(--brand);
+  border-color: transparent;
+}
+
+/* ハンバーガー */
+.nav-toggle{
+  display: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  border: 1px solid rgba(31,42,36,.12);
+  background: rgba(255,255,255,.70);
+  font-weight: 900;
+}
+
+/* 固定ヘッダー分、アンカー位置をズラす */
+section{ scroll-margin-top: calc(var(--headerH) + 18px); }
+
+@media (max-width: 900px){
+  .nav{
+    display: none;
+    position: absolute;
+    top: var(--headerH);
+    left: 0;
+    right: 0;
+    padding: 12px var(--px);
+    background: rgba(251,250,246,.92);
+    border-bottom: 1px solid rgba(31,42,36,.10);
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .site-header.is-open .nav{ display: flex; }
+  .nav-toggle{ display: inline-flex; align-items:center; justify-content:center; }
+}
+    
     /* ===== HERO（あなたの現状を維持）===== */
     .hero{
       color:#fff;
