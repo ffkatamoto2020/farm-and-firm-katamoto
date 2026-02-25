@@ -575,11 +575,99 @@ section{ scroll-margin-top: calc(var(--headerH) + 18px); }
 @media (max-width: 900px){
   .feature-cards{ grid-template-columns: 1fr; }
 }
+    /* ===== NAV ===== */
+:root{ --headerH: 64px; }
+
+.site-header{
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: var(--headerH);
+  z-index: 9999;
+  background: rgba(251,250,246,.78);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(31,42,36,.10);
+}
+
+.site-header .container{
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.brand{
+  display: inline-flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 900;
+  line-height: 1.1;
+}
+
+.brand small{
+  color: var(--muted);
+  font-weight: 700;
+  letter-spacing: .08em;
+}
+
+.nav{
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.nav a{
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 800;
+  font-size: 14px;
+  opacity: .9;
+}
+
+.nav a:hover{ opacity: 1; }
+
+body{ padding-top: var(--headerH); }
+
+@media (max-width: 900px){
+  :root{ --headerH: 76px; }
+  .nav{ gap: 10px; }
+}
+    /* アンカー移動時、固定ヘッダーに隠れないようにする */
+section[id]{
+  scroll-margin-top: calc(var(--headerH) + 12px);
+}
+
+/* スクロールをなめらかに */
+html{ scroll-behavior: smooth; }
+    @media (max-width: 700px){
+  .nav{ gap: 10px; }
+  .nav a{ font-size: 13px; }
+}
   </style>
 </head>
 
 <body>
-  <section class="hero">
+  <header class="site-header">
+  <div class="container">
+    <a class="brand" href="#top">
+      Farm &amp; Firm かたもと
+      <small>北海道・伊達市</small>
+    </a>
+
+    <nav class="nav">
+      <a href="#quality">こだわり</a>
+      <a href="#products">商品</a>
+      <a href="#howtobuy">購入方法</a>
+      <a href="#faq">FAQ</a>
+      <a href="#instagram">Instagram</a>
+      <a href="#youtube">YouTube</a>
+    </nav>
+  </div>
+</header>
+  <section class="hero" id="top">
     <div class="hero-content">
       <h1>食べごろを、そのまま届ける。</h1>
       <p class="hero-sub">完熟収穫、朝採れ出荷。</p>
