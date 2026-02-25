@@ -117,6 +117,80 @@
 
     /* ===== SECTION（ここに“CSSだけ”を書く）===== */
 
+    /* ==== ABOUT / FAQ / YOUTUBE (minimum) ==== */
+
+.section-title{
+  margin: 0 0 10px;
+  font-size: clamp(22px, 2.4vw, 34px);
+  letter-spacing: .02em;
+}
+.section-lead{
+  margin: 0 0 18px;
+  color: var(--muted);
+}
+
+.about-grid{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+.about-card{
+  background: rgba(255,255,255,.78);
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  padding: 14px;
+  box-shadow: var(--shadow);
+}
+.about-card h3{ margin: 0 0 6px; font-size: 18px; }
+.about-card p{ margin: 0; opacity: .88; line-height: 1.7; }
+
+.faq{ display: grid; gap: 10px; margin-top: 12px; }
+.faq-item{
+  background: rgba(255,255,255,.78);
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  padding: 10px 12px;
+  box-shadow: var(--shadow);
+}
+.faq-item summary{
+  cursor: pointer;
+  font-weight: 900;
+  list-style: none;
+}
+.faq-item summary::-webkit-details-marker{ display:none; }
+.faq-item p{ margin: 10px 0 0; opacity: .88; line-height: 1.7; }
+
+.youtube-card{
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(255,255,255,.78);
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  padding: 16px;
+  box-shadow: var(--shadow);
+}
+.youtube-card h3{ margin: 0 0 6px; }
+.youtube-card p{ margin: 0; opacity: .88; line-height: 1.7; }
+
+@media (max-width: 700px){
+  .about-grid{ grid-template-columns: 1fr; }
+  .youtube-card{ flex-direction: column; align-items: stretch; }
+}
+    
+/* ==== INSTAGRAM ==== */
+.insta-grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-top: 12px;
+}
+
+@media (max-width: 900px){
+  .insta-grid{ grid-template-columns: 1fr; }
+}
+    
   /* ==== HOW TO BUY SECTION ==== */
 
 .section.alt { background: rgba(0,0,0,0.04); }
@@ -539,7 +613,100 @@
     </div>
   </div>
 </section>
+<!-- ==== FAQ SECTION ==== -->
+<section id="faq" class="section alt">
+  <div class="container">
+    <h2 class="section-title">よくある質問</h2>
+    <p class="section-lead">購入前の不安が残らないよう、先にお答えします。</p>
+
+    <div class="faq">
+      <details class="faq-item">
+        <summary>いつ届きますか？</summary>
+        <p>収穫状況と販売先の案内に合わせて出荷します。基本は「食べごろで収穫 → できるだけ早く発送」です。</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>ミニトマトは甘いですか？</summary>
+        <p>甘味の強い品種だけでなく、酸味が際立つ品種も育てています。食べ比べが楽しいセットです。</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>ギフト対応はできますか？</summary>
+        <p>販売先でギフト対応がある場合があります。リンクツリーから各販売ページをご確認ください。</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>保存方法は？</summary>
+        <p>到着後は風味を見て常温／冷蔵を使い分けるのがおすすめです。商品に同梱の案内がある場合はそちらを優先してください。</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>農園の様子は見られますか？</summary>
+        <p>YouTubeで栽培の様子や裏側も公開しています。下のセクションからどうぞ。</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ==== INSTAGRAM SECTION ==== -->
+<section id="instagram" class="section alt">
+  <div class="container">
+    <h2 class="section-title">日々の畑の様子（Instagram）</h2>
+    <p class="section-lead">
+      収穫の様子や季節の風景を、日々更新しています。
+    </p>
+
+    <div class="insta-grid">
+
+      <!-- 投稿1 -->
+      <blockquote class="instagram-media"
+        data-instgrm-permalink="https://www.instagram.com/p/DPdgz7bAZz2/"
+        data-instgrm-version="14">
+      </blockquote>
+
+      <!-- 投稿2 -->
+      <blockquote class="instagram-media"
+        data-instgrm-permalink="https://www.instagram.com/p/DPYXNRckcFa/?img_index=1"
+        data-instgrm-version="14">
+      </blockquote>
+
+      <!-- 投稿3 -->
+      <blockquote class="instagram-media"
+        data-instgrm-permalink="https://www.instagram.com/p/DPLfQlcAP3L/?img_index=1"
+        data-instgrm-version="14">
+      </blockquote>
+
+    </div>
+
+    <div style="text-align:center; margin-top:24px;">
+      <a class="btn" href="https://instagram.com/farm_and_firm_katamoto" target="_blank">
+        Instagramを見る
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ==== YOUTUBE SECTION ==== -->
+<section id="youtube" class="section">
+  <div class="container">
+    <h2 class="section-title">YouTubeで畑の様子を見る</h2>
+    <p class="section-lead">
+      収穫や栽培の裏側も公開しています。はじめての方は、まずこちらから。
+    </p>
+
+    <div class="youtube-card">
+      <div>
+        <h3>サラリーマンが農家になってみた</h3>
+        <p>アスパラ栽培シリーズ／ミニトマトのこだわり／現場のリアルを発信しています。</p>
+      </div>
+      <a class="btn ghost lg" href="https://www.youtube.com/" target="_blank" rel="noopener">YouTubeへ</a>
+    </div>
+  </div>
+</section>
+
+
   
   <footer>© 2026 Farm &amp; Firm かたもと</footer>
+  <script async src="//www.instagram.com/embed.js"></script>
 </body>
 </html>
