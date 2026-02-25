@@ -3,475 +3,522 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Farm&Firm かたもと｜北海道伊達市の完熟野菜</title>
-  <meta name="description" content="北海道・伊達市の畑から、完熟のタイミングで収穫し、当日出荷。カラフルミニトマトとアスパラガスを直販しています。" />
+  <title>Farm &amp; Firm かたもと</title>
+
+  <script>
+    // ✅ 販売先（リンクツリー）—必要なら後で差し替えOK
+    const BUY_URL = "https://linktr.ee/ffkatamoto2020?utm_source=site&utm_medium=hp&utm_campaign=brand";
+  </script>
 
   <style>
     :root{
       --bg:#fbfaf6;
-      --surface:#ffffff;
+      --surface:#fff;
       --text:#1f2a24;
-      --muted:#556a61;
+      --muted:#5a6a61;
       --line:rgba(31,42,36,.12);
 
-      --brand:#2f5b45;   /* 深緑 */
-      --brand2:#7a6a4a;  /* 土色 */
-
-      --shadow:0 18px 50px rgba(0,0,0,.10);
+      --brand:#2f5b45;
+      --brand2:#7a6a4a;
 
       --container:1100px;
-      --px:clamp(16px,3vw,44px);
-      --r-lg:22px;
+      --px:clamp(16px,3vw,40px);
+      --secY:clamp(56px,7vw,96px);
+
+      --r-lg:20px;
       --r-md:14px;
+      --shadow:0 18px 50px rgba(0,0,0,.10);
     }
 
     *{box-sizing:border-box}
-    html,body{height:100%}
     body{
       margin:0;
-      font-family:-apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Noto Sans JP", sans-serif;
+      font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Hiragino Sans","Noto Sans JP",sans-serif;
       color:var(--text);
       background:var(--bg);
       line-height:1.85;
     }
 
-    a{color:inherit; text-decoration:none}
-    img{max-width:100%; height:auto; display:block}
-
+    a{color:inherit}
     .container{
       max-width:var(--container);
       margin:0 auto;
       padding:0 var(--px);
     }
 
-    /* ===== Header ===== */
-    .topbar{
-      position:sticky;
-      top:0;
-      z-index:50;
-      backdrop-filter:saturate(180%) blur(10px);
-      background:rgba(251,250,246,.78);
-      border-bottom:1px solid rgba(0,0,0,.06);
-    }
-    .topbar-inner{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      padding:10px var(--px);
-      max-width:var(--container);
-      margin:0 auto;
-    }
-    .brand{
-      display:flex;
-      gap:10px;
-      align-items:center;
-      font-weight:800;
-      letter-spacing:.02em;
-    }
-    .brand .dot{
-      width:10px;height:10px;border-radius:50%;
-      background:linear-gradient(135deg,var(--brand),var(--brand2));
-      box-shadow:0 10px 24px rgba(47,91,69,.28);
-    }
-    .nav{
-      display:flex;
-      gap:16px;
-      align-items:center;
-      color:var(--muted);
-      font-weight:700;
-      font-size:14px;
-    }
-    .nav a{padding:8px 10px; border-radius:999px}
-    .nav a:hover{background:rgba(47,91,69,.08); color:var(--brand)}
-    @media (max-width: 780px){
-      .nav{display:none;}
-    }
-
-    /* ===== Buttons ===== */
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:10px;
-      padding:12px 18px;
-      border-radius:999px;
-      border:1px solid var(--line);
-      background:var(--surface);
-      font-weight:800;
-      letter-spacing:.02em;
-      box-shadow:0 10px 30px rgba(0,0,0,.06);
-      transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
-      cursor:pointer;
-      user-select:none;
-    }
-    .btn:hover{transform:translateY(-2px); box-shadow:0 22px 46px rgba(0,0,0,.12)}
-    .btn.primary{
-      border:1px solid rgba(255,255,255,.22);
-      color:#fff;
-      background:linear-gradient(135deg,var(--brand),#1f3f31);
-      box-shadow:0 18px 40px rgba(47,91,69,.25);
-    }
-    .btn.ghost{
-      background:rgba(255,255,255,.72);
-    }
-
-    /* ===== Hero ===== */
+    /* ===== HERO ===== */
     .hero{
-      position:relative;
-      min-height:70vh;
-      max-height:860px;
-      display:flex;
-      align-items:flex-end;
-      overflow:hidden;
       color:#fff;
-      border-bottom:1px solid rgba(0,0,0,.06);
-      background:
-        linear-gradient(180deg, rgba(0,0,0,.35), rgba(0,0,0,.55)),
-        url("Photos/DSC00317.JPG");
+      position:relative;
+      width:100%;
+      height:70vh;
+      min-height:520px;
+      max-height:760px;
+
+      /* ✅ ここがヒーロー背景画像（Website直下にDSC00317.JPGがある前提） */
+      background-image:url("DSC00317.JPG");
       background-size:cover;
       background-position:center;
       background-repeat:no-repeat;
+
+      display:flex;
+      align-items:flex-end;
+      justify-content:flex-start;
     }
+
     .hero::before{
       content:"";
       position:absolute;
       inset:0;
-      background:
-        radial-gradient(1200px 600px at 10% 95%, rgba(0,0,0,.55), rgba(0,0,0,0)),
-        linear-gradient(90deg, rgba(0,0,0,.55), rgba(0,0,0,0) 55%);
-      pointer-events:none;
+      /* 左から中央に向かって黒→透明（狙ってたやつ） */
+      background:linear-gradient(90deg, rgba(0,0,0,.55) 0%, rgba(0,0,0,.28) 35%, rgba(0,0,0,0) 70%);
     }
-    .hero-inner{
+
+    .hero-content{
       position:relative;
+      padding:0 var(--px) clamp(28px,6vw,64px);
+      max-width:var(--container);
+      margin:0 auto;
       width:100%;
-      padding: clamp(26px, 6vw, 70px) var(--px);
     }
+
     .hero h1{
       margin:0;
-      font-size:clamp(34px, 4.6vw, 56px);
-      letter-spacing:.03em;
-      text-shadow:0 3px 18px rgba(0,0,0,.55);
-    }
-    .hero p{
-      margin:10px 0 0;
-      max-width:760px;
-      color:rgba(255,255,255,.88);
+      font-size:38px;
       font-weight:700;
-      text-shadow:0 2px 14px rgba(0,0,0,.55);
-    }
-    .hero-cta{
-      margin-top:18px;
-      display:flex;
-      gap:12px;
-      flex-wrap:wrap;
-      align-items:center;
+      letter-spacing:.02em;
+      text-shadow:0 2px 12px rgba(0,0,0,.65), 0 0 24px rgba(0,0,0,.35);
     }
 
-    /* ===== Sections ===== */
-    .section{
-      padding: clamp(26px, 6vw, 70px) 0;
+    .hero-sub{
+      margin:6px 0 0;
+      font-size:18px;
+      opacity:.98;
+      text-shadow:0 2px 8px rgba(0,0,0,.65);
     }
-    .section.alt{
-      background:rgba(0,0,0,.03);
-      border-top:1px solid rgba(0,0,0,.05);
-      border-bottom:1px solid rgba(0,0,0,.05);
+
+    /* ===== SECTIONS ===== */
+    section.section{
+      padding:var(--secY) 0;
     }
+
+    section.section.alt{
+      background:rgba(0,0,0,.04);
+    }
+
     .section-title{
-      margin:0;
-      font-size:clamp(22px, 2.3vw, 32px);
+      margin:0 0 10px;
+      font-size:clamp(22px,2.2vw,34px);
       letter-spacing:.02em;
     }
-    .lead{
-      margin:10px 0 0;
+
+    .section-lead{
+      margin:0 0 28px;
       color:var(--muted);
-      max-width:860px;
-      font-weight:700;
     }
 
-    .grid-2{
+    /* ===== ABOUT ===== */
+    .about-grid{
       display:grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap:clamp(16px, 3vw, 30px);
-      margin-top:18px;
+      grid-template-columns:1.05fr .95fr;
+      gap:clamp(20px,4vw,44px);
       align-items:start;
     }
-    @media (max-width: 860px){
-      .grid-2{grid-template-columns:1fr;}
+
+    .about-photo{
+      border-radius:var(--r-lg);
+      overflow:hidden;
+      box-shadow:var(--shadow);
+      border:1px solid var(--line);
+      background:#fff;
+    }
+    .about-photo img{
+      width:100%;
+      height:auto;
+      display:block;
     }
 
-    .card{
-      background:rgba(255,255,255,.82);
+    .about-cards{
+      display:grid;
+      gap:12px;
+    }
+
+    .about-card{
+      background:rgba(255,255,255,.78);
       border:1px solid var(--line);
       border-radius:var(--r-lg);
+      padding:16px 18px;
       box-shadow:var(--shadow);
-      overflow:hidden;
     }
-    .card-inner{padding:clamp(14px, 2.4vw, 22px)}
-    .badge{
+    .about-card h3{
+      margin:0 0 6px;
+      font-size:18px;
+    }
+    .about-card p{
+      margin:0;
+      color:var(--muted);
+    }
+
+    .cta-box{
+      margin-top:22px;
+      display:flex;
+      gap:16px;
+      align-items:center;
+      justify-content:space-between;
+      background:rgba(255,255,255,.78);
+      border:1px solid var(--line);
+      border-radius:var(--r-lg);
+      padding:16px;
+      box-shadow:var(--shadow);
+    }
+    .cta-text h3{margin:0 0 6px}
+    .cta-text p{margin:0;color:var(--muted)}
+
+    .btn{
       display:inline-flex;
       align-items:center;
-      gap:8px;
-      padding:6px 12px;
+      justify-content:center;
+      padding:12px 16px;
       border-radius:999px;
-      background:rgba(47,91,69,.10);
-      color:var(--brand);
-      font-weight:900;
-      letter-spacing:.02em;
-      font-size:13px;
-      border:1px solid rgba(47,91,69,.18);
-    }
-
-    .points{
-      display:grid;
-      gap:12px;
-      margin-top:14px;
-    }
-    .point{
-      display:grid;
-      grid-template-columns: 44px 1fr;
-      gap:12px;
-      align-items:start;
-      padding:14px;
-      border-radius:var(--r-md);
-      background:rgba(255,255,255,.75);
-      border:1px solid rgba(0,0,0,.06);
-    }
-    .num{
-      width:44px;height:44px;
-      display:grid; place-items:center;
-      border-radius:14px;
-      background:rgba(47,91,69,.12);
-      color:var(--brand);
-      font-weight:900;
-    }
-    .point h3{margin:0 0 4px; font-size:16px}
-    .point p{margin:0; color:var(--muted); font-weight:700; font-size:14px; line-height:1.65}
-
-    /* ===== Product cards ===== */
-    .products{
-      display:grid;
-      grid-template-columns: repeat(2, minmax(0,1fr));
-      gap:clamp(14px, 2.6vw, 22px);
-      margin-top:18px;
-    }
-    @media (max-width: 860px){
-      .products{grid-template-columns:1fr;}
-    }
-    .product-head{
-      display:flex;
-      align-items:flex-start;
-      justify-content:space-between;
-      gap:12px;
-    }
-    .pill{
-      font-size:12px;
-      font-weight:900;
-      color:rgba(255,255,255,.92);
-      background:linear-gradient(135deg,var(--brand2),#5a4f37);
-      padding:6px 10px;
-      border-radius:999px;
+      font-weight:800;
+      letter-spacing:.04em;
+      text-decoration:none;
+      border:1px solid rgba(255,255,255,.25);
+      cursor:pointer;
+      user-select:none;
       white-space:nowrap;
     }
-    .product-title{
-      margin:10px 0 0;
-      font-size:18px;
-      letter-spacing:.02em;
+
+    .btn.primary{
+      background:var(--brand);
+      color:#fff;
+      border-color:rgba(255,255,255,.25);
+      box-shadow:0 18px 40px rgba(0,0,0,.22);
     }
-    .product-text{
-      margin:8px 0 0;
-      color:var(--muted);
-      font-weight:700;
+    .btn.ghost{
+      background:transparent;
+      color:var(--text);
+      border:1px solid var(--line);
     }
-    .mini{
-      font-size:12px;
-      color:rgba(85,106,97,.95);
-      font-weight:800;
-      margin-top:10px;
+    .btn.lg{padding:12px 18px}
+
+    /* ===== PRODUCTS ===== */
+    .grid-2{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:18px;
+      margin-top:16px;
     }
 
-    /* ===== Footer ===== */
+    .product-card{
+      background:rgba(255,255,255,.78);
+      border:1px solid var(--line);
+      border-radius:var(--r-lg);
+      overflow:hidden;
+      box-shadow:var(--shadow);
+      display:flex;
+      flex-direction:column;
+    }
+
+    .product-img img{
+      width:100%;
+      height:auto;
+      display:block;
+    }
+
+    .product-body{
+      padding:16px 18px 18px;
+    }
+    .product-body h3{margin:0 0 6px}
+    .product-copy{margin:0 0 10px;color:var(--muted)}
+    .product-points{
+      margin:0 0 14px;
+      padding-left:18px;
+      color:var(--text);
+    }
+    .btn-row{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
+    /* ===== INSTAGRAM ===== */
+    .insta-grid{
+      display:grid;
+      gap:18px;
+      grid-template-columns:repeat(auto-fit, minmax(280px,1fr));
+    }
+    /* インスタ埋め込みの余白を整える（崩れ防止） */
+    .instagram-media{
+      margin:0 !important;
+      min-width:0 !important;
+      width:100% !important;
+    }
+
+    /* ===== HOW TO BUY ===== */
+    .steps{
+      display:grid;
+      gap:12px;
+      margin-top:18px;
+    }
+    .step{
+      display:grid;
+      grid-template-columns:44px 1fr;
+      gap:12px;
+      align-items:start;
+      background:rgba(255,255,255,.72);
+      border:1px solid var(--line);
+      border-radius:var(--r-lg);
+      padding:14px;
+      box-shadow:var(--shadow);
+    }
+    .step-num{
+      width:44px;height:44px;
+      border-radius:14px;
+      display:grid;
+      place-items:center;
+      background:rgba(34,94,60,.12);
+      font-weight:800;
+    }
+    .step h3{margin:0 0 6px;font-size:18px}
+    .step p{margin:0;opacity:.85;line-height:1.7}
+
+    /* ===== FOOTER ===== */
     footer{
-      padding:28px 0 90px;
-      color:rgba(85,106,97,.95);
       text-align:center;
-      font-weight:800;
+      padding:28px var(--px) 90px; /* フローティングCTA分の余白 */
+      color:rgba(0,0,0,.65);
     }
 
-    /* Floating CTA */
+    /* ===== Floating CTA ===== */
     .floating-cta{
       position:fixed;
       right:18px;
       bottom:18px;
       z-index:9999;
+
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+
+      padding:14px 18px;
+      border-radius:999px;
+      text-decoration:none;
+      font-weight:800;
+      letter-spacing:.04em;
+
+      background:var(--brand);
+      color:#fff;
+
+      border:1px solid rgba(255,255,255,.25);
+      box-shadow:0 18px 40px rgba(0,0,0,.22);
+      transition:transform .15s ease, box-shadow .15s ease;
     }
-    @media (max-width: 780px){
-      .floating-cta{right:12px; bottom:12px;}
-      .floating-cta .btn{padding:12px 16px; font-size:14px;}
+    .floating-cta:hover{
+      transform:translateY(-2px);
+      box-shadow:0 22px 46px rgba(0,0,0,.28);
+    }
+
+    /* ===== responsive ===== */
+    @media (max-width:900px){
+      .about-grid{grid-template-columns:1fr}
+      .grid-2{grid-template-columns:1fr}
+    }
+    @media (max-width:700px){
+      .hero{min-height:460px;height:62vh}
+      .hero h1{font-size:30px}
+      .hero-sub{font-size:16px}
+      .cta-box{flex-direction:column;align-items:stretch}
+      .floating-cta{right:12px;bottom:12px;padding:12px 16px;font-size:14px}
     }
   </style>
-
-  <script>
-    // 販売導線（Linktreeなど）
-    const BUY_URL = "https://linktr.ee/ffkatamoto2020?utm_source=site&utm_medium=hp&utm_campaign=brand";
-    // SNS（必要に応じて変更）
-    const YT_URL  = "https://www.youtube.com/@ShingoKatamoto";
-    const IG_URL  = "https://instagram.com/farm_and_firm_katamoto";
-  </script>
 </head>
 
 <body>
-  <div class="topbar">
-    <div class="topbar-inner">
-      <div class="brand">
-        <span class="dot"></span>
-        <span>Farm&Firm かたもと</span>
-      </div>
-      <nav class="nav">
-        <a href="#about">農園について</a>
-        <a href="#products">作物</a>
-        <a href="#buy">購入方法</a>
-        <a href="#sns">SNS</a>
-      </nav>
+  <section class="hero">
+    <div class="hero-content container">
+      <h1>Farm&amp;Firm かたもと</h1>
+      <p class="hero-sub">北海道の畑から、新鮮な野菜をお届けします</p>
     </div>
-  </div>
+  </section>
 
-  <header class="hero">
-    <div class="hero-inner container">
-      <div class="badge">北海道・伊達市｜完熟収穫・当日出荷</div>
-      <h1>Farm&Firm かたもと</h1>
-      <p>食べごろで収穫し、できるだけ早くお届け。<br>ミニトマトとアスパラを中心に、北海道の畑から“新鮮で美味しい”を直販します。</p>
-      <div class="hero-cta">
-        <a class="btn primary" href="#" onclick="location.href=BUY_URL; return false;">販売サイトを見る</a>
-        <a class="btn ghost" href="#about">農園のこだわり</a>
+  <!-- ABOUT -->
+  <section id="about" class="section">
+    <div class="container">
+      <h2 class="section-title">私たちの農園</h2>
+      <p class="section-lead">
+        北海道でアスパラガスとカラフルミニトマトを栽培しています。<br>
+        直販販売を中心に、新鮮で美味しい野菜をお届けしています。
+      </p>
+
+      <div class="about-grid">
+        <div class="about-photo">
+          <!-- ✅ トマト写真（Website直下にDSC00052.JPGがある前提） -->
+          <img src="DSC00052.JPG" alt="栽培中のミニトマト" loading="lazy">
+        </div>
+
+        <div class="about-cards">
+          <div class="about-card">
+            <h3>完熟収穫・当日出荷</h3>
+            <p>食べごろで収穫し、できるだけ早くお届け。味のピークを逃しません。</p>
+          </div>
+          <div class="about-card">
+            <h3>畑の土と水を大切に</h3>
+            <p>高品質な完熟堆肥を使い、微生物の力を活かした土づくり。地下水も活用しています。</p>
+          </div>
+          <div class="about-card">
+            <h3>除草剤不使用（手で除草）</h3>
+            <p>畑の環境を守るため、草は手で管理。手間をかけて品質につなげています。</p>
+          </div>
+          <div class="about-card">
+            <h3>自分が美味しい品種だけ</h3>
+            <p>ミニトマトは甘味だけでなく酸味の効いた品種も。栽培も収穫判断も自分で行います。</p>
+          </div>
+
+          <div class="cta-box">
+            <div class="cta-text">
+              <h3>販売中の商品を確認する</h3>
+              <p>在庫・販売先はリンクツリーにまとめています。</p>
+            </div>
+            <a class="btn primary lg" href="#" onclick="location.href=BUY_URL; return false;">販売サイトへ進む</a>
+          </div>
+        </div>
       </div>
     </div>
-  </header>
+  </section>
 
-  <main>
-    <section id="about" class="section">
-      <div class="container">
-        <h2 class="section-title">農園について</h2>
-        <p class="lead">
-          北海道・伊達市の畑から。完熟のタイミングで収穫し、朝採れをその日のうちに出荷します。
-          “自分が食べて美味しい”を基準に、品質にこだわって育てています。
-        </p>
+  <!-- PRODUCTS -->
+  <section id="products" class="section alt">
+    <div class="container">
+      <h2 class="section-title">季節の主役</h2>
+      <p class="section-lead">北海道・伊達市の畑から、いちばん美味しいタイミングで収穫し、その日のうちに出荷します。</p>
 
-        <div class="grid-2">
-          <div class="card">
-            <div class="card-inner">
-              <div class="points">
-                <div class="point">
-                  <div class="num">1</div>
-                  <div>
-                    <h3>完熟収穫・当日出荷</h3>
-                    <p>食べごろで収穫し、できるだけ早くお届け。味のピークを逃しません。</p>
-                  </div>
-                </div>
-                <div class="point">
-                  <div class="num">2</div>
-                  <div>
-                    <h3>土と水を大切に</h3>
-                    <p>高品質な完熟堆肥で土づくり。地下水も活用し、健やかな生育を支えます。</p>
-                  </div>
-                </div>
-                <div class="point">
-                  <div class="num">3</div>
-                  <div>
-                    <h3>除草剤不使用（手で除草）</h3>
-                    <p>畑の環境を守るため、草は手で管理。手間をかけて品質につなげます。</p>
-                  </div>
-                </div>
-                <div class="point">
-                  <div class="num">4</div>
-                  <div>
-                    <h3>品種は“美味しいものだけ”</h3>
-                    <p>ミニトマトは甘味だけでなく酸味が立つ品種も。収穫判断も自分で行います。</p>
-                  </div>
-                </div>
-              </div>
+      <div class="grid-2">
+        <article class="product-card">
+          <div class="product-img">
+            <!-- ✅ 画像がまだ無いなら後で差し替えOK -->
+            <img src="quality-03.jpg" alt="カラフルミニトマト" loading="lazy">
+          </div>
+          <div class="product-body">
+            <h3>宝石箱ミニトマト</h3>
+            <p class="product-copy">5色11品種。甘味だけでなく、酸味が際立つ品種も。食べ比べが楽しい、ギフトにも人気のセットです。</p>
+            <ul class="product-points">
+              <li>完熟の見極めはすべて自分で</li>
+              <li>平均糖度8度以上（目安）</li>
+              <li>女性人気の「宝石箱BOX」</li>
+            </ul>
+            <div class="btn-row">
+              <a class="btn primary" href="#" onclick="location.href=BUY_URL; return false;">販売サイトへ</a>
+              <a class="btn ghost" href="#howtobuy">購入方法を見る</a>
             </div>
           </div>
+        </article>
 
-          <div class="card">
-            <img src="Photos/DSC00317.JPG" alt="ハウス内のミニトマト" loading="lazy">
-            <div class="card-inner">
-              <div class="mini">※写真はサンプル。差し替えも簡単です。</div>
+        <article class="product-card">
+          <div class="product-img">
+            <img src="DSC00171.JPG" alt="グリーンアスパラ" loading="lazy">
+          </div>
+          <div class="product-body">
+            <h3>北海道グリーンアスパラ</h3>
+            <p class="product-copy">日常のごちそうにも、贈り物にも。みずみずしさと香りが立つ、春〜初夏の季節限定です。</p>
+            <ul class="product-points">
+              <li>収穫後の鮮度を優先して出荷</li>
+              <li>太さ・A品率にもこだわり</li>
+              <li>YouTubeで栽培の裏側も公開</li>
+            </ul>
+            <div class="btn-row">
+              <a class="btn primary" href="#" onclick="location.href=BUY_URL; return false;">販売サイトへ</a>
+              <a class="btn ghost" href="#youtube">栽培の様子を見る</a>
             </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- INSTAGRAM -->
+  <section id="instagram" class="section">
+    <div class="container">
+      <h2 class="section-title">日々の畑の様子（Instagram）</h2>
+      <p class="section-lead">収穫の様子や季節の風景を、日々更新しています。</p>
+
+      <div class="insta-grid">
+        <!-- ✅ ここは後で「投稿URL」を入れたら表示できます -->
+        <blockquote class="instagram-media" data-instgrm-permalink="ここに投稿URL" data-instgrm-version="14"></blockquote>
+        <blockquote class="instagram-media" data-instgrm-permalink="ここに投稿URL" data-instgrm-version="14"></blockquote>
+        <blockquote class="instagram-media" data-instgrm-permalink="ここに投稿URL" data-instgrm-version="14"></blockquote>
+      </div>
+
+      <div style="text-align:center; margin-top:24px;">
+        <!-- ✅ Instagram ID を後で差し替え -->
+        <a class="btn ghost" href="https://instagram.com/あなたのID" target="_blank" rel="noopener">Instagramを見る</a>
+      </div>
+    </div>
+  </section>
+
+  <script async src="https://www.instagram.com/embed.js"></script>
+
+  <!-- YOUTUBE -->
+  <section id="youtube" class="section alt">
+    <div class="container">
+      <h2 class="section-title">栽培の様子（YouTube）</h2>
+      <p class="section-lead">
+        種まきから収穫まで、実際の栽培の様子を公開しています。<br>
+        作っている人の顔が見えることが、いちばんの安心だと思っています。
+      </p>
+
+      <div style="text-align:center;">
+        <a class="btn primary lg"
+           href="https://www.youtube.com/@ShingoKatamoto"
+           target="_blank" rel="noopener">YouTubeチャンネルを見る</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW TO BUY -->
+  <section id="howtobuy" class="section">
+    <div class="container">
+      <h2 class="section-title">ご購入の流れ</h2>
+      <p class="section-lead">EC機能は持たず、販売は外部サイトで行っています。下の手順で迷わず購入できます。</p>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-body">
+            <h3>販売サイトを選ぶ</h3>
+            <p>「販売サイトへ」ボタンからリンクツリーへ移動し、販売中の商品（ミニトマト／アスパラ）を選びます。</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-body">
+            <h3>商品を注文する</h3>
+            <p>在庫や発送予定日を確認して注文します。収穫状況に合わせて、食べごろのタイミングで出荷します。</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-body">
+            <h3>届いたら、まずは素材の味を</h3>
+            <p>ミニトマトは食べ比べ、アスパラは塩ゆでだけでも香りと甘みが際立ちます。</p>
           </div>
         </div>
       </div>
-    </section>
 
-    <section id="products" class="section alt">
-      <div class="container">
-        <h2 class="section-title">作物</h2>
-        <p class="lead">ギフトにも、日常にも。食卓が少し嬉しくなる野菜を目指しています。</p>
-
-        <div class="products">
-          <div class="card">
-            <div class="card-inner">
-              <div class="product-head">
-                <div class="badge">カラフル</div>
-                <div class="pill">人気：宝石箱ミニトマトBOX</div>
-              </div>
-              <div class="product-title">カラフルミニトマト</div>
-              <p class="product-text">
-                甘味だけじゃない、酸味が効いた品種も。食べ比べが楽しいセットに仕立てています。
-                “完熟の見極め”が難しいからこそ、収穫判断は自分で。
-              </p>
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="card-inner">
-              <div class="product-head">
-                <div class="badge">高級感</div>
-                <div class="pill">ギフトにも最適</div>
-              </div>
-              <div class="product-title">アスパラガス</div>
-              <p class="product-text">
-                日常的に食べられる野菜でありながら、贈り物にも映える“特別感”。
-                春の旬に合わせて、みずみずしい味わいをお届けします。
-              </p>
-            </div>
-          </div>
+      <div class="cta-box" style="margin-top:22px;">
+        <div class="cta-text">
+          <h3>販売中の商品はこちら</h3>
+          <p>在庫・販売先はリンクツリーにまとめています。</p>
         </div>
+        <a class="btn primary lg" href="#" onclick="location.href=BUY_URL; return false;">販売サイトへ進む</a>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="buy" class="section">
-      <div class="container">
-        <h2 class="section-title">購入方法</h2>
-        <p class="lead">在庫・販売先はリンク集にまとめています。まずはこちらからご確認ください。</p>
+  <footer>© 2026 Farm &amp; Firm かたもと</footer>
 
-        <div style="margin-top:16px; display:flex; gap:12px; flex-wrap:wrap;">
-          <a class="btn primary" href="#" onclick="location.href=BUY_URL; return false;">販売サイトへ進む</a>
-          <a class="btn" href="#" onclick="location.href=IG_URL; return false;">Instagramを見る</a>
-          <a class="btn" href="#" onclick="location.href=YT_URL; return false;">YouTubeを見る</a>
-        </div>
-      </div>
-    </section>
-
-    <section id="sns" class="section alt">
-      <div class="container">
-        <h2 class="section-title">SNS</h2>
-        <p class="lead">
-          栽培の様子や畑の風景を発信しています。最新情報はSNSが早いです。
-        </p>
-        <div style="margin-top:16px; display:flex; gap:12px; flex-wrap:wrap;">
-          <a class="btn" href="#" onclick="location.href=IG_URL; return false;">Instagram（畑の日常）</a>
-          <a class="btn" href="#" onclick="location.href=YT_URL; return false;">YouTube（栽培の記録）</a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    © Farm&Firm かたもと
-  </footer>
-
-  <div class="floating-cta">
-    <a class="btn primary" href="#" onclick="location.href=BUY_URL; return false;">販売サイトを見る</a>
-  </div>
+  <a class="floating-cta" href="#" onclick="location.href=BUY_URL; return false;">販売サイトへ</a>
 </body>
 </html>
