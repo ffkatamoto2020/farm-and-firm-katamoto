@@ -560,9 +560,10 @@ section{ scroll-margin-top: calc(var(--headerH) + 18px); }
 
 /* ==== Marche photos（横2枚） ==== */
 .marche-photos{
+  max-width: 420px;
+  margin-top: 8px;
+  margin-left: auto;   /* ← 右寄せ */
   display: grid;
-  grid-template-columns: 1fr 1fr;  /* ← 横並び */
-  gap: 12px;
 }
 
 .marche-photos img{
@@ -944,7 +945,6 @@ html{ scroll-behavior: smooth; }
       <!-- 右：マルシェ写真（2枚・写真だけ） -->
 <aside class="marche-photos" aria-label="マルシェの様子">
   <img src="/images/marche1.jpg" alt="マルシェ出店の様子" loading="lazy">
-  <img src="/images/marche2.jpg" alt="販売ブースの様子" loading="lazy">
 </aside>
 
     </div><!-- /.step-body-grid -->
