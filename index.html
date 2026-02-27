@@ -5,8 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Farm & Firm かたもと</title>
 
- <script>
+<script>
   const BUY_URL = "https://linktr.ee/ffkatamoto2020?utm_source=site&utm_medium=hp&utm_campaign=brand";
+
+  // 直リンク（生産者ページなど、URLが変わらない想定のもの）
+  const TABECHOKU_URL = "https://example.com/tabechoku-producer"; // ←ここを実URLに
+  const COOPMYFARM_URL = "https://example.com/coopmyfarm-producer"; // ←ここを実URLに
 </script>
 
   <style>
@@ -507,7 +511,65 @@ section{ scroll-margin-top: calc(var(--headerH) + 18px); }
       .about-media img{ aspect-ratio:16/10; }
       .trust{ grid-template-columns:1fr; }
     }
-    
+
+/* ===== ここに追加：Buy site cards (右側) ===== */
+.step-body-grid{
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 16px;
+  align-items: start;
+}
+
+.buy-sites{
+  display: grid;
+  gap: 10px;
+}
+
+.buy-sites .label{
+  font-size: 12px;
+  color: var(--muted);
+  font-weight: 800;
+  letter-spacing: .06em;
+}
+
+.buy-site{
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  text-decoration: none;
+  color: var(--text);
+  background: rgba(255,255,255,.78);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 10px 12px;
+}
+
+.buy-site:hover{
+  box-shadow: 0 14px 34px rgba(0,0,0,.10);
+}
+
+.buy-site img{
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  object-fit: cover;
+  border: 1px solid rgba(31,42,36,.10);
+  background: #fff;
+}
+
+.buy-site .meta{ line-height: 1.35; }
+.buy-site .name{ font-weight: 900; }
+.buy-site .desc{
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+@media (max-width: 700px){
+  .step-body-grid{
+    grid-template-columns: 1fr;
+  }
+}    
      /* ===== QUALITY SECTION ===== */
 .feature-hero{
   padding: var(--secY) 0;
@@ -716,22 +778,54 @@ html{ scroll-behavior: smooth; }
     <div class="steps">
 
       <!-- 1) NET -->
-      <div class="step">
-        <div class="step-num">1</div>
-        <div class="step-body">
-          <h3>全国配送（ネット購入）</h3>
-          <p>
-            北海道伊達市の農園から直送します。<br>
-            <strong>ふるさと納税・食べチョク・COOP MYFARM</strong>からご注文いただけます。<br>
-            現在購入できる販売サイトはこちらにまとめています。
-          </p>
-          <div class="cta-row" style="margin-top:10px;">
-            <a class="btn primary" href="#" onclick="location.href=BUY_URL; return false;">販売サイト一覧を見る</a>
-            <span style="font-size:12px;color:var(--muted);">※外部サイトへ移動します</span>
-          </div>
+<div class="step">
+  <div class="step-num">1</div>
+
+  <div class="step-body">
+    <div class="step-body-grid">
+
+      <!-- 左：説明＋主導線（Linktree） -->
+      <div>
+        <h3>全国配送（ネット購入）</h3>
+        <p>
+          北海道伊達市の農園から直送します。<br>
+          <strong>ふるさと納税・食べチョク・COOP MY FARM</strong>からご注文いただけます。<br>
+          現在購入できる販売サイトは、こちらにまとめています。
+        </p>
+
+        <div class="cta-row" style="margin-top:10px;">
+          <a class="btn primary" href="#" onclick="location.href=BUY_URL; return false;">販売サイト一覧を見る</a>
+          <span style="font-size:12px;color:var(--muted);">※外部サイトへ移動します</span>
         </div>
       </div>
 
+      <!-- 右：直リンク（サムネ付き） -->
+      <aside class="buy-sites" aria-label="販売先の一例">
+        <div class="label">販売先の一例（直リンク）</div>
+
+        <!-- 食べチョク：URLと画像を後で差し替え -->
+        <a class="buy-site" href="https://www.tabechoku.com/producers/21592" target="_blank" rel="noopener">
+          <img src="/images/thumb-tabechoku.jpg" alt="食べチョク 生産者ページ" loading="lazy">
+          <div class="meta">
+            <div class="name">食べチョク</div>
+            <div class="desc">生産者ページを見る</div>
+          </div>
+        </a>
+
+        <!-- COOP MY FARM：URLと画像を後で差し替え -->
+        <a class="buy-site" href="https://coop.myfarm.co.jp/products/9737095676205" target="_blank" rel="noopener">
+          <img src="/images/thumb-coopmyfarm.jpg" alt="COOP MY FARM 生産者ページ" loading="lazy">
+          <div class="meta">
+            <div class="name">COOP MY FARM</div>
+            <div class="desc">生産者ページを見る</div>
+          </div>
+        </a>
+
+      </aside>
+
+    </div>
+  </div>
+</div>
       <!-- 2) MARCHE -->
       <div class="step">
         <div class="step-num">2</div>
