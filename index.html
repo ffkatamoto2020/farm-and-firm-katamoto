@@ -310,7 +310,7 @@ section{ scroll-margin-top: calc(var(--headerH) + 18px); }
   display: grid;
   grid-template-columns: 44px 1fr;
   gap: 12px;
-  align-items: center;   /* ← これで中央揃え */
+  align-items: start;
   background: rgba(255,255,255,0.72);
   border: 1px solid var(--line);
   border-radius: var(--r-lg);
@@ -326,6 +326,8 @@ section{ scroll-margin-top: calc(var(--headerH) + 18px); }
   place-items: center;
   background: rgba(34, 94, 60, 0.12);
   font-weight: 800;
+
+  margin-top: 6px;   /* ← ★ これを追加（ここ！） */
 }
 
 .step p{ margin: 0; opacity: .85; line-height: 1.7; }
