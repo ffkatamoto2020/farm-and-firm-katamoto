@@ -448,12 +448,15 @@ section{ scroll-margin-top: calc(var(--headerH) + 18px); }
       background:rgba(251,250,246,.7);
     }
 
-    .cta-row{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      margin-top:4px;
-    }
+   .cta-note{
+  font-size:12px;
+  color:var(--muted);
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;   /* ← 左揃え */
+  text-align:left;          /* ← 念のため */
+  line-height:1.4;
+}
     .btn{
       display:inline-flex;
       align-items:center;
@@ -943,7 +946,11 @@ html{ scroll-behavior: smooth; }
 
         <div class="cta-row" style="margin-top:10px;">
           <a class="btn primary" href="#" onclick="location.href=BUY_URL; return false;">販売サイト一覧を見る</a>
-          <span style="font-size:12px;color:var(--muted);">※現在販売中の外部サイトが確認いただけます</span>
+          <span class="cta-note">
+            ※現在ご購入いただける販売先をまとめています
+            <br>
+            ※ふるさと納税サイトへのリンクもこちらから
+          </span>
         </div>
       </div>
 
