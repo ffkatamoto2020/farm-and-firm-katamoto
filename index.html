@@ -310,14 +310,14 @@ section{ scroll-margin-top: calc(var(--headerH) + 18px); }
   display: grid;
   grid-template-columns: 44px 1fr;
   gap: 12px;
-  align-items: start;
+  align-items: center;   /* ← これで中央揃え */
   background: rgba(255,255,255,0.72);
   border: 1px solid var(--line);
   border-radius: var(--r-lg);
   padding: 14px;
   box-shadow: var(--shadow);
 }
-
+    
 .step-num{
   width: 44px;
   height: 44px;
@@ -328,8 +328,19 @@ section{ scroll-margin-top: calc(var(--headerH) + 18px); }
   font-weight: 800;
 }
 
-.step h3{ margin: 0 0 6px; font-size: 18px; }
 .step p{ margin: 0; opacity: .85; line-height: 1.7; }
+/* ★ステップ見出しを大きく＆中央寄せ */
+.step h3{
+  margin: 6px 0 10px;
+  font-size: 20px;
+  line-height: 1.4;
+  font-weight: 800;
+}
+
+/* ★説明文を少し下へ */
+.step p{
+  margin-top: 6px;
+}
 
 .cta-box{
   margin-top: 22px;
