@@ -559,14 +559,12 @@ section{ scroll-margin-top: calc(var(--headerH) + 18px); }
 }
 
 /* ==== Marche photos（横2枚） ==== */
-.marche-photos{
+.marche-photo-single{
   max-width: 420px;
-  margin-top: 8px;
-  margin-left: auto;   /* ← 右寄せ */
-  display: grid;
+  margin-left: auto;
+  margin-top: 12px;   /* ← これ追加すると揃う */
 }
-
-.marche-photos img{
+.marche-photo-single img{
   width: 100%;
   height: auto;
   border-radius: 14px;
@@ -575,8 +573,9 @@ section{ scroll-margin-top: calc(var(--headerH) + 18px); }
   box-shadow: 0 10px 24px rgba(0,0,0,.12);
 }
 @media (max-width: 700px){
-  .marche-photos{
-    grid-template-columns: 1fr;  /* スマホは縦 */
+  .marche-photo-single{
+    margin-left: 0;
+    margin-top: 16px;
   }
 }
     
@@ -943,7 +942,7 @@ html{ scroll-behavior: smooth; }
       </div>
 
       <!-- 右：マルシェ写真 -->
-<aside class="marche-photos" aria-label="マルシェの様子">
+<aside class="marche-photo-single" aria-label="マルシェの様子">
   <img src="/images/DSC_0362.JPG" alt="マルシェ出店の様子" loading="lazy">
 </aside>
 
