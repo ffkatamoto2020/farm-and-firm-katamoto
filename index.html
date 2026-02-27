@@ -558,6 +558,27 @@ section{ scroll-margin-top: calc(var(--headerH) + 18px); }
   padding: 6px;
 }
 
+/* ==== Marche photos（横2枚） ==== */
+.marche-photos{
+  display: grid;
+  grid-template-columns: 1fr 1fr;  /* ← 横並び */
+  gap: 12px;
+}
+
+.marche-photos img{
+  width: 100%;
+  height: auto;
+  border-radius: 14px;
+  object-fit: cover;
+  aspect-ratio: 4/3;
+  box-shadow: 0 10px 24px rgba(0,0,0,.12);
+}
+@media (max-width: 700px){
+  .marche-photos{
+    grid-template-columns: 1fr;  /* スマホは縦 */
+  }
+}
+    
 .buy-site .meta{ line-height: 1.35; }
 .buy-site .name{ font-weight: 900; }
 .buy-site .desc{
@@ -920,27 +941,11 @@ html{ scroll-behavior: smooth; }
         </div>
       </div>
 
-      <!-- 右：マルシェ写真（2枚） -->
-      <aside class="buy-sites" aria-label="マルシェの様子">
-        <div class="label">マルシェの様子</div>
-
-        <div class="buy-site">
-          <img src="/images/marche1.jpg" alt="マルシェ出店の様子" loading="lazy">
-          <div class="meta">
-            <div class="name">青山ファーマーズマーケット</div>
-            <div class="desc">出店風景</div>
-          </div>
-        </div>
-
-        <div class="buy-site">
-          <img src="/images/marche2.jpg" alt="販売ブースの様子" loading="lazy">
-          <div class="meta">
-            <div class="name">販売ブース</div>
-            <div class="desc">お客様との様子</div>
-          </div>
-        </div>
-
-      </aside>
+      <!-- 右：マルシェ写真（2枚・写真だけ） -->
+<aside class="marche-photos" aria-label="マルシェの様子">
+  <img src="/images/marche1.jpg" alt="マルシェ出店の様子" loading="lazy">
+  <img src="/images/marche2.jpg" alt="販売ブースの様子" loading="lazy">
+</aside>
 
     </div><!-- /.step-body-grid -->
   </div><!-- /.step-body -->
