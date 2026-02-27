@@ -22,7 +22,7 @@
       --muted:#5a6a61;
       --line:rgba(31,42,36,.12);
 
-      --brand:#2f6a4a;
+      --brand:#3A8B57;
       --brand2:#7a6a4a;
 
       --container:1100px;
@@ -456,12 +456,13 @@ section{ scroll-margin-top: calc(var(--headerH) + 18px); }
       transition:transform .15s ease, box-shadow .15s ease;
     }
     .btn:active{ transform:translateY(1px); }
-    .btn.primary{
- 　　　 background: var(--brand);
-　　　  color:#fff;
-　　　  border: 1px solid rgba(255,255,255,.22);
-　　　  box-shadow: 0 12px 26px rgba(0,0,0,.16);
+   .btn.primary{
+  background: var(--brand);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,.22);
+  box-shadow: 0 12px 26px rgba(0,0,0,.16);
 }
+
 .btn.primary:hover{
   transform: translateY(-1px);
   box-shadow: 0 16px 34px rgba(0,0,0,.18);
@@ -750,7 +751,6 @@ html{ scroll-behavior: smooth; }
 @media (max-width: 900px){
   .grid-2{ grid-template-columns: 1fr; }
 }
-}
   </style>
 </head>
 
@@ -762,14 +762,16 @@ html{ scroll-behavior: smooth; }
       <small>北海道伊達市</small>
     </a>
 
-   <button class="nav-toggle" type="button" aria-label="メニューを開く" aria-expanded="false">☰ MENU</button>
-      <a href="#quality">こだわり</a>
-      <a href="#products">商品</a>
-      <a href="#howtobuy">購入方法</a>
-      <a href="#faq">FAQ</a>
-      <a href="#instagram">Instagram</a>
-      <a href="#youtube">YouTube</a>
-    </nav>
+  <button class="nav-toggle" type="button" aria-label="メニューを開く" aria-expanded="false">☰ MENU</button>
+
+<nav class="nav" aria-label="サイト内メニュー">
+  <a href="#quality">こだわり</a>
+  <a href="#products">商品</a>
+  <a href="#howtobuy">購入方法</a>
+  <a href="#faq">FAQ</a>
+  <a href="#instagram">Instagram</a>
+  <a href="#youtube">YouTube</a>
+</nav>
   </div>
 </header>
   <section class="hero" id="top">
