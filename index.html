@@ -648,9 +648,61 @@ section[id]{
 
 /* スクロールをなめらかに */
 html{ scroll-behavior: smooth; }
-    @media (max-width: 700px){
+@media (max-width: 700px){
   .nav{ gap: 10px; }
   .nav a{ font-size: 13px; }
+}
+    
+/* ==== SECTION base ==== */
+.section{ padding: var(--secY) 0; }
+.section.alt{ background: rgba(0,0,0,0.04); }
+
+/* ==== PRODUCTS ==== */
+.grid-2{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(12px, 2vw, 18px);
+  margin-top: 18px;
+}
+
+.product-card{
+  display: grid;
+  grid-template-columns: 1fr;
+  background: rgba(255,255,255,.78);
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.product-img img{
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/10;
+  object-fit: cover;
+}
+
+.product-body{ padding: 16px; }
+.product-body h3{ margin: 0 0 8px; }
+.product-copy{ margin: 0 0 12px; color: var(--muted); }
+
+.product-points{
+  margin: 0 0 14px;
+  padding-left: 18px;
+}
+.product-points li{ margin: 6px 0; color: var(--muted); }
+
+.btn-row{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+@media (max-width: 900px){
+  .grid-2{ grid-template-columns: 1fr; }
+}
 }
   </style>
 </head>
@@ -663,7 +715,7 @@ html{ scroll-behavior: smooth; }
       <small>北海道・伊達市</small>
     </a>
 
-    <nav class="nav">
+   <button class="nav-toggle" type="button" aria-label="メニューを開く" aria-expanded="false">☰ MENU</button>
       <a href="#quality">こだわり</a>
       <a href="#products">商品</a>
       <a href="#howtobuy">購入方法</a>
@@ -711,11 +763,30 @@ html{ scroll-behavior: smooth; }
       </article>
     </div>
 
-    <div class="feature-hero__cta">
-    　<a class="btn primary" href="#" onclick="location.href=BUY_URL; return false;">
- 　　　 販売サイトで購入する
-     </a>
-      <a class="btn ghost" href="#about">農園について</a>
+<div class="feature-hero__cta">
+  <a class="btn primary" href="#" onclick="location.href=BUY_URL; return false;">販売サイトで購入する</a>
+  <a class="btn ghost" href="#about">農園について</a>
+</div>
+  </div>
+</section>
+
+<!-- ==== ABOUT SECTION ==== -->
+<section id="about" class="section">
+  <div class="container">
+    <h2 class="section-title">農園について</h2>
+    <p class="section-lead">
+      北海道・伊達市で、ミニトマトとアスパラを育てています。食べごろで収穫し、その日のうちに出荷します。
+    </p>
+
+    <div class="about-grid">
+      <div class="about-card">
+        <h3>完熟収穫</h3>
+        <p>樹で熟してから収穫。風味が濃く、食べ比べが楽しくなります。</p>
+      </div>
+      <div class="about-card">
+        <h3>当日出荷</h3>
+        <p>朝採れをできるだけ早く発送。鮮度の良さを優先しています。</p>
+      </div>
     </div>
   </div>
 </section>
@@ -984,6 +1055,26 @@ html{ scroll-behavior: smooth; }
 
   
   <footer>© 2026 Farm &amp; Firm かたもと</footer>
-  <script async src="//www.instagram.com/embed.js"></script>
+  <script async src="https://www.instagram.com/embed.js"></script>
+<script>
+  const header = document.querySelector('.site-header');
+  const toggle = document.querySelector('.nav-toggle');
+  const nav = document.querySelector('.nav');
+
+  if (toggle && header && nav){
+    toggle.addEventListener('click', () => {
+      header.classList.toggle('is-open');
+      const open = header.classList.contains('is-open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+
+    nav.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        header.classList.remove('is-open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+</script>
 </body>
 </html>
