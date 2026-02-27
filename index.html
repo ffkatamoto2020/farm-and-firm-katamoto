@@ -22,7 +22,7 @@
       --muted:#5a6a61;
       --line:rgba(31,42,36,.12);
 
-      --brand:#4e8a63;
+      --brand:#2f6a4a;
       --brand2:#7a6a4a;
 
       --container:1100px;
@@ -457,10 +457,15 @@ section{ scroll-margin-top: calc(var(--headerH) + 18px); }
     }
     .btn:active{ transform:translateY(1px); }
     .btn.primary{
-      background:var(--brand);
-      color:#fff;
-      box-shadow:0 10px 24px rgba(47,91,69,.24);
-    }
+ 　　　 background: var(--brand);
+　　　  color:#fff;
+　　　  border: 1px solid rgba(255,255,255,.22);
+　　　  box-shadow: 0 12px 26px rgba(0,0,0,.16);
+}
+.btn.primary:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 16px 34px rgba(0,0,0,.18);
+}
     .btn.ghost{
       background:rgba(255,255,255,.72);
       color:var(--text);
