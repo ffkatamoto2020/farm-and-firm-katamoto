@@ -674,6 +674,15 @@ html{ scroll-behavior: smooth; }
 .section{ padding: var(--secY) 0; }
 .section.alt{ background: rgba(0,0,0,0.04); }
 
+/* ==== ABOUT 背景写真 ==== */
+#about{
+  background:
+    linear-gradient(rgba(255,255,255,0.92), rgba(255,255,255,0.92)),
+    url("/images/ここに写真名.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
 /* ==== PRODUCTS ==== */
 .grid-2{
   display: grid;
@@ -788,7 +797,7 @@ html{ scroll-behavior: smooth; }
 </section>
 
 <!-- ==== ABOUT SECTION ==== -->
-<section id="about" class="section">
+<section id="about" class="section about-bg">
   <div class="container">
     <h2 class="section-title">農園について</h2>
     <p class="section-lead">
