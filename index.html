@@ -473,18 +473,18 @@ section{ scroll-margin-top: calc(var(--headerH) + 18px); }
   border-color: var(--line);
 }
 
-/* Instagramボタン専用 */
-.btn-instagram{
-  background:#E1306C;
-  color:#fff;
-  border: none;
-  box-shadow: 0 12px 26px rgba(225,48,108,.28);
+/* Instagramボタン（ghostを上書きして、ボタン本体をピンクにする） */
+.btn.ghost.btn-instagram{
+  background: #E1306C;       /* インスタピンク */
+  color: #fff;
+  border-color: transparent; /* 枠は消す（必要なら後で調整可） */
+  box-shadow: 0 12px 26px rgba(0,0,0,.16); /* “ピンクにじみ”をやめて普通の影に */
 }
 
-.btn-instagram:hover{
-  background:#C13584;
+.btn.ghost.btn-instagram:hover{
+  background: #C13584;       /* hoverで少し濃く */
   transform: translateY(-1px);
-  box-shadow: 0 16px 34px rgba(225,48,108,.32);
+  box-shadow: 0 16px 34px rgba(0,0,0,.18);
 }
     .trust{
       margin-top:clamp(18px,3vw,28px);
