@@ -776,32 +776,45 @@ html{ scroll-behavior: smooth; }
 .product-copy{ margin: 0 0 12px; color: var(--muted); }
 .product-highlight{
   margin-top: 10px;
-  padding: 10px;
+  padding: 10px 12px;
   border-radius: 12px;
   background: rgba(58,139,87,.10);
   border: 1px solid rgba(58,139,87,.16);
 
   display: grid;
-  grid-template-columns: 1fr 120px;
-  gap: 10px;
-  align-items: start;
+  grid-template-columns: 1fr 160px; /* 写真を大きく */
+  gap: 12px;
+  align-items: center; /* 全体を縦センター */
 }
 
+/* テキストを「2段固定」にする（ここが最重要） */
 .product-highlight .ph-text{
+  display: grid;
+  grid-template-rows: auto auto;  /* 2段固定 */
+  align-content: center;          /* 縦センター */
+  gap: 4px;
+  min-width: 0;
+}
+
+.product-highlight .ph-line1{
   font-size: 14px;
   font-weight: 700;
   line-height: 1.55;
 }
 
+.product-highlight .ph-line2{
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 1.55;
+}
+
 .product-highlight .ph-img{
-  width: 84px;
-  height: 56px;
+  width: 160px;
+  height: 110px;
   border-radius: 10px;
   object-fit: cover;
   border: 1px solid rgba(31,42,36,.12);
   background: #fff;
-
-  margin-top: 2px;  /* ← ここに追加 */
 }
 
 .product-points{
@@ -823,15 +836,15 @@ html{ scroll-behavior: smooth; }
 }
 @media (max-width: 520px){
   .product-highlight{
-    grid-template-columns: 1fr;
-    align-items: start;
-    gap: 12px;
+    grid-template-columns: 1fr;   /* 1列にする */
+    align-items: center;
   }
+
   .product-highlight .ph-img{
-  width: 100%;
-  height: 140px;
-  margin-top: 6px;   /* 2pxでもOK、少し空けたいなら6px */
-}
+    width: 100%;
+    height: 180px;                /* スマホは写真をしっかり見せる */
+    margin-top: 10px;
+  }
 }
   </style>
 </head>
@@ -945,11 +958,11 @@ html{ scroll-behavior: smooth; }
 
           <div class="product-highlight">
             <div class="ph-text">
-              当園人気No.1ミニトマト「ほれまる」だけを詰めた
-              <strong>【ほれまるセット】</strong> もご用意しています。
+              <span class="ph-line1">当園人気No.1ミニトマト「ほれまる」だけを詰めた</span>
+              <strong class="ph-line2">【ほれまるセット】もご用意しています。</strong>
             </div>
 
-            <img class="ph-img" src="/images/DSC00198.JPG" alt="ほれまる（完熟ミニトマト）" loading="lazy">
+            <img class="ph-img" src="/images/horemru.jpg" alt="ほれまる（完熟ミニトマト）" loading="lazy">
           </div>
         </div>
       </article>
