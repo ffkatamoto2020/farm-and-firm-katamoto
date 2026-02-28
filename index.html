@@ -691,15 +691,14 @@ section{ scroll-margin-top: calc(var(--headerH) + 18px); }
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: clamp(12px, 2vw, 18px);
-  align-items: stretch;
-  align-content: stretch;
+  align-items: start;
+  align-content: start;
   margin-top: 14px;
 }
 
 .glass-card{
   display: flex;
   flex-direction: column;
-  height: 100%;
   border-radius: 20px;
   border: 1px solid rgba(255,255,255,.28);
   background: rgba(251,250,246,.72);
@@ -708,14 +707,9 @@ section{ scroll-margin-top: calc(var(--headerH) + 18px); }
   padding: 16px;
   -webkit-backdrop-filter: blur(10px);
 }
-
-.glass-card p{
-  flex-grow: 1;
-  min-height: calc(1.8em * 5); /* 本文を最低5行分確保（必要なら数字調整） */
-}
     
 .glass-card h3{
-  margin: 0 0 10px;
+  margin: 0 0 8px;
   font-size: clamp(15px, 1.3vw, 18px);
   line-height: 1.35;
   font-weight: 900;
@@ -728,6 +722,7 @@ section{ scroll-margin-top: calc(var(--headerH) + 18px); }
   color: var(--muted);
   font-size: 14px;
   line-height: 1.8;
+  min-height: calc(1.8em * 5);
 }
 
 .glass-card img{
@@ -743,8 +738,10 @@ section{ scroll-margin-top: calc(var(--headerH) + 18px); }
   margin-top: 18px;
   display: flex;
   gap: 10px;
+  flex-wrap: wrap;          /* ←追加 */
+  justify-content: center;  /* ←追加（見た目も安定） */
 }
-
+    
 @media (max-width: 900px){
   .feature-cards{ grid-template-columns: 1fr; }
 }
