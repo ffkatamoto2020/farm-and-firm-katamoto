@@ -782,35 +782,46 @@ html{ scroll-behavior: smooth; }
   border: 1px solid rgba(58,139,87,.16);
 
   display: grid;
-  grid-template-columns: 1fr 160px; /* 写真を大きく */
+  grid-template-columns: 1fr 190px; /* 写真をもっと大きく */
   gap: 12px;
   align-items: center; /* 全体を縦センター */
 }
 
-/* テキストを「2段固定」にする（ここが最重要） */
+/* テキストは「2段固定」＋縦センター */
 .product-highlight .ph-text{
   display: grid;
   grid-template-rows: auto auto;  /* 2段固定 */
-  align-content: center;          /* 縦センター */
+  align-content: center;          /* ブロック内で縦センター */
   gap: 4px;
   min-width: 0;
 }
 
+/* 1行目を「必ず1行で止める」= 2段構成を崩さない */
 .product-highlight .ph-line1{
   font-size: 14px;
   font-weight: 700;
   line-height: 1.55;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
+/* 2行目は強調。必要なら1行固定でもOK */
 .product-highlight .ph-line2{
   font-size: 14px;
   font-weight: 800;
   line-height: 1.55;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
+/* 写真を大きく */
 .product-highlight .ph-img{
-  width: 160px;
-  height: 110px;
+  width: 100%;
+  height: 120px;
   border-radius: 10px;
   object-fit: cover;
   border: 1px solid rgba(31,42,36,.12);
@@ -836,14 +847,18 @@ html{ scroll-behavior: smooth; }
 }
 @media (max-width: 520px){
   .product-highlight{
-    grid-template-columns: 1fr;   /* 1列にする */
-    align-items: center;
+    grid-template-columns: 1fr;
   }
-
   .product-highlight .ph-img{
-    width: 100%;
-    height: 180px;                /* スマホは写真をしっかり見せる */
+    height: 180px;
     margin-top: 10px;
+  }
+  /* スマホでは1行固定を解除して読みやすくする */
+  .product-highlight .ph-line1,
+  .product-highlight .ph-line2{
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
   }
 }
   </style>
