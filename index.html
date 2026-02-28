@@ -787,35 +787,21 @@ html{ scroll-behavior: smooth; }
   align-items: center; /* 全体を縦センター */
 }
 
-/* テキストは「2段固定」＋縦センター */
 .product-highlight .ph-text{
-  display: grid;
-  grid-template-rows: auto auto;  /* 2段固定 */
-  align-content: center;          /* ブロック内で縦センター */
-  gap: 4px;
-  min-width: 0;
+  line-height: 1.6;
 }
-
-/* 1行目を「必ず1行で止める」= 2段構成を崩さない */
+    
 .product-highlight .ph-line1{
   font-size: 14px;
   font-weight: 700;
   line-height: 1.55;
-
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 
-/* 2行目は強調。必要なら1行固定でもOK */
 .product-highlight .ph-line2{
   font-size: 14px;
-  font-weight: 800;
+  font-weight: 900; /* 800と900はどちらか1つでOK */
   line-height: 1.55;
-
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  color: var(--brand);
 }
 
 /* 写真を大きく */
