@@ -449,12 +449,13 @@ section{ scroll-margin-top: calc(var(--headerH) + 18px); }
       background:rgba(251,250,246,.7);
     }
     
-    .cta-row{
-      display:flex;
-      align-items:center;
-      gap:12px;
-      flex-wrap:nowrap;
-    }
+   .cta-row{
+     display:flex;
+     justify-content:center;   /* ← 追加（これが本命） */
+     align-items:center;
+     gap:16px;                 /* 少し広げると高級感UP */
+     flex-wrap:wrap;           /* スマホでも崩れない */
+   }
     
     #products .cta-row{
       justify-content: center;
