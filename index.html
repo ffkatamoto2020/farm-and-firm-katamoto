@@ -778,12 +778,13 @@ html{ scroll-behavior: smooth; }
   gap: clamp(12px, 2vw, 18px);
   margin-top: 18px;
 
-  align-items: start;   /* ← これが重要 */
+  align-items: stretch;
 }
 
 .product-card{
-  display: grid;
-  grid-template-columns: 1fr;
+  display: flex;              /* ← grid から変更 */
+  flex-direction: column;     /* ← 縦に積む */
+  height: 100%;               /* ← 重要：行の高さに追従 */
   background: rgba(255,255,255,.78);
   border: 1px solid var(--line);
   border-radius: var(--r-lg);
@@ -989,8 +990,6 @@ html{ scroll-behavior: smooth; }
             <li>一粒一粒、完熟を見極め</li>
             <li>シーズン通して平均糖度8度以上をキープ</li>
           </ul>
-
-          <div class="product-highlight">
             <div class="ph-text">
               <span class="ph-line1">当園人気No.1ミニトマト「ほれまる」だけを詰めた</span>
               <strong class="ph-line2">
