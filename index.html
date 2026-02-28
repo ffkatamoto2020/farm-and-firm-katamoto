@@ -691,6 +691,8 @@ section{ scroll-margin-top: calc(var(--headerH) + 18px); }
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: clamp(12px, 2vw, 18px);
+  align-items: stretch;
+  align-content: stretch;
   margin-top: 14px;
 }
 
@@ -709,6 +711,7 @@ section{ scroll-margin-top: calc(var(--headerH) + 18px); }
 
 .glass-card p{
   flex-grow: 1;
+  min-height: calc(1.8em * 5); /* 本文を最低5行分確保（必要なら数字調整） */
 }
     
 .glass-card h3{
@@ -717,6 +720,7 @@ section{ scroll-margin-top: calc(var(--headerH) + 18px); }
   line-height: 1.35;
   font-weight: 900;
   color: var(--text);
+  min-height: calc(1.35em * 2); /* 見出しを2行分確保して本文位置を揃える */
 }
 
 .glass-card p{
@@ -732,6 +736,7 @@ section{ scroll-margin-top: calc(var(--headerH) + 18px); }
   object-fit: cover;
   border-radius: 12px;
   margin-bottom: 10px;
+  display: block;
 }
 
 .feature-hero__cta{
