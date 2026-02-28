@@ -800,11 +800,16 @@ html{ scroll-behavior: smooth; }
   object-fit: cover;
 }
 
-.product-body{ padding: 16px; }
+.product-body{
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
 .product-body h3{ margin: 0 0 8px; }
 .product-copy{ margin: 0 0 12px; color: var(--muted); }
 .product-highlight{
-  margin-top: 10px;
+  margin-top: auto;
   padding: 10px 12px;
   border-radius: 12px;
   background: rgba(58,139,87,.10);
@@ -986,19 +991,23 @@ html{ scroll-behavior: smooth; }
         <div class="product-body">
           <h3>カラフルミニトマト</h3>
           <p class="product-copy">5色11品種の完熟ミニトマト。甘味だけでなく、酸味や香りの違いも楽しめる、食べ比べが楽しいセットです。</p>
-          <ul class="product-points">
-            <li>一粒一粒、完熟を見極め</li>
-            <li>シーズン通して平均糖度8度以上をキープ</li>
-          </ul>
+         <ul class="product-points">
+           <li>一粒一粒、完熟を見極め</li>
+           <li>シーズン通して平均糖度8度以上をキープ</li>
+         </ul>
+
+<!-- ↓ ここを追加（薄緑の箱の本体） -->
+          <div class="product-highlight">
             <div class="ph-text">
               <span class="ph-line1">当園人気No.1ミニトマト「ほれまる」だけを詰めた</span>
               <strong class="ph-line2">
                 <span class="horemaru-name">【ほれまるセット】</span>もご用意しています。
               </strong>
             </div>
-
+            
             <img class="ph-img" src="/images/DSC00198.JPG" alt="ほれまる（完熟ミニトマト）" loading="lazy">
           </div>
+<!-- ↑ 追加ここまで -->
         </div>
       </article>
 
