@@ -451,11 +451,16 @@ section{ scroll-margin-top: calc(var(--headerH) + 18px); }
     
    .cta-row{
      display:flex;
-     justify-content:center;   /* ← 追加（これが本命） */
+     justify-content:flex-start; /* ←基本は左揃え */
      align-items:center;
-     gap:16px;                 /* 少し広げると高級感UP */
-     flex-wrap:wrap;           /* スマホでも崩れない */
+     gap:16px;
+     flex-wrap:wrap;
    }
+
+    /* 左寄せを明示したいとき用（マルシェなど） */
+    .cta-row.left{
+      justify-content:flex-start;
+    }
     
     #products .cta-row{
       justify-content: center;
@@ -1126,7 +1131,7 @@ html{ scroll-behavior: smooth; }
           出店先・出店日はInstagramでお知らせしています。
         </p>
 
-        <div class="cta-row" style="margin-top:10px;">
+        <div class="cta-row left" style="margin-top:10px;">
           <a class="btn insta-btn" href="https://instagram.com/farm_and_firm_katamoto" target="_blank" rel="noopener">
             📸 Instagramで出店情報を見る
           </a>
