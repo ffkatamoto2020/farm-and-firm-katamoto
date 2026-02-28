@@ -781,6 +781,27 @@ html{ scroll-behavior: smooth; }
   background: rgba(58,139,87,.12);
   font-size: 14px;
   font-weight: 700;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.product-highlight .ph-text{
+  flex: 1 1 auto;
+  min-width: 0; /* 折り返しが綺麗になる */
+  line-height: 1.6;
+}
+
+/* 右側の小さな写真 */
+.product-highlight .ph-img{
+  flex: 0 0 auto;
+  width: 92px;        /* ←ここでサイズ調整 */
+  height: 56px;       /* ←ここでサイズ調整 */
+  border-radius: 8px;
+  object-fit: cover;
+  border: 1px solid rgba(31,42,36,.12);
+  background: #fff;
 }
 
 .product-points{
@@ -910,10 +931,14 @@ html{ scroll-behavior: smooth; }
             <li>シーズン通して平均糖度8度以上をキープ</li>
           </ul>
 
-          <p class="product-highlight">
-            当園人気No.1品種「ほれまる」だけを詰めた
-            <strong>【ほれまるセット】</strong> もご用意しています。
-          </p>
+          <div class="product-highlight">
+            <div class="ph-text">
+              当園人気No.1品種「ほれまる」だけを詰めた
+              <strong>【ほれまるセット】</strong> もご用意しています。
+            </div>
+
+            <img class="ph-img" src="/images/horemru.jpg" alt="ほれまる（完熟ミニトマト）" loading="lazy">
+          </div>
         </div>
       </article>
 
