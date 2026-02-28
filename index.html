@@ -776,29 +776,27 @@ html{ scroll-behavior: smooth; }
 .product-copy{ margin: 0 0 12px; color: var(--muted); }
 .product-highlight{
   margin-top: 10px;
-  padding: 8px 12px;
-  border-radius: 10px;
-  background: rgba(58,139,87,.12);
-  font-size: 14px;
-  font-weight: 700;
+  padding: 10px;
+  border-radius: 12px;
+  background: rgba(58,139,87,.10);
+  border: 1px solid rgba(58,139,87,.16);
 
-  display: flex;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 84px;
   gap: 10px;
+  align-items: center;
 }
 
 .product-highlight .ph-text{
-  flex: 1 1 auto;
-  min-width: 0; /* 折り返しが綺麗になる */
-  line-height: 1.6;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.55;
 }
 
-/* 右側の小さな写真 */
 .product-highlight .ph-img{
-  flex: 0 0 auto;
-  width: 92px;        /* ←ここでサイズ調整 */
-  height: 56px;       /* ←ここでサイズ調整 */
-  border-radius: 8px;
+  width: 84px;
+  height: 56px;
+  border-radius: 10px;
   object-fit: cover;
   border: 1px solid rgba(31,42,36,.12);
   background: #fff;
@@ -820,6 +818,21 @@ html{ scroll-behavior: smooth; }
 
 @media (max-width: 900px){
   .grid-2{ grid-template-columns: 1fr; }
+}
+@media (max-width: 520px){
+  .product-highlight{
+    grid-template-columns: 1fr;
+    align-items: start;
+    gap: 12px;
+  }
+  .product-highlight .ph-img{
+    width: 100%;
+    height: 140px;
+    border-radius: 10px;
+    object-fit: cover;
+    border: 1px solid rgba(31,42,36,.12);
+    background: #fff;
+  }
 }
   </style>
 </head>
