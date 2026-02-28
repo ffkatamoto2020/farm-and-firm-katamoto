@@ -482,37 +482,44 @@ section{ scroll-margin-top: calc(var(--headerH) + 18px); }
       border:1px solid transparent;
       transition:transform .15s ease, box-shadow .15s ease;
     }
+    .insta-btn{
+      background: linear-gradient(
+        45deg,
+        #f58529,
+        #dd2a7b,
+        #8134af,
+        #515bd4
+      );
+      color: white;
+      border: none;
+      font-weight: 700;
+      padding: 0 20px;      /* 高さは.btnで決まる */
+      box-shadow: 0 10px 24px rgba(0,0,0,.18);
+    }
+
+    .insta-btn:hover{
+      transform: translateY(-2px);
+      box-shadow: 0 16px 32px rgba(0,0,0,.22);
+    }
+    .insta-btn:active{ transform: translateY(1px); }
     .btn:active{ transform:translateY(1px); }
-   .btn.primary{
-  background: var(--brand);
-  color: #fff;
-  border: 1px solid rgba(255,255,255,.22);
-  box-shadow: 0 12px 26px rgba(0,0,0,.16);
-}
+    .btn.primary{
+      background: var(--brand);
+      color: #fff;
+      border: 1px solid rgba(255,255,255,.22);
+      box-shadow: 0 12px 26px rgba(0,0,0,.16);
+    }
 
-.btn.primary:hover{
-  transform: translateY(-1px);
-  box-shadow: 0 16px 34px rgba(0,0,0,.18);
-}
-.btn.ghost{
-  background: rgba(255,255,255,.72);
-  color: var(--text);
-  border-color: var(--line);
-}
+    .btn.primary:hover{
+      transform: translateY(-1px);
+      box-shadow: 0 16px 34px rgba(0,0,0,.18);
+    }
+    .btn.ghost{
+      background: rgba(255,255,255,.72);
+      color: var(--text);
+      border-color: var(--line);
+    }
 
-/* Instagramボタン（ghostを上書きして、ボタン本体をピンクにする） */
-.btn.ghost.btn-instagram{
-  background: #E1306C;       /* インスタピンク */
-  color: #fff;
-  border-color: transparent; /* 枠は消す（必要なら後で調整可） */
-  box-shadow: 0 12px 26px rgba(0,0,0,.16); /* “ピンクにじみ”をやめて普通の影に */
-}
-
-.btn.ghost.btn-instagram:hover{
-  background: #C13584;       /* hoverで少し濃く */
-  transform: translateY(-1px);
-  box-shadow: 0 16px 34px rgba(0,0,0,.18);
-}
     .trust{
       margin-top:clamp(18px,3vw,28px);
       display:grid;
@@ -1174,7 +1181,9 @@ html{ scroll-behavior: smooth; }
     </div>
 
     <div style="text-align:center; margin-top:24px;">
-      <a class="btn" href="https://instagram.com/farm_and_firm_katamoto" target="_blank">
+      <a class="btn insta-btn"
+        href="https://instagram.com/farm_and_firm_katamoto"target="_blank">
+        <span class="insta-icon">📸</span>
         Instagramを見る
       </a>
     </div>
