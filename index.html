@@ -231,14 +231,14 @@ section{ scroll-margin-top: calc(var(--headerH) + 18px); }
     padding-left:24px;
     padding-bottom:40px;
   }
+} /* ← ここで @media を閉じる（ここがポイント） */
 
-  .hero-sub{
-    margin:6px 0 0;
-    font-size:28px;
-    opacity:.98;
-    text-shadow:0 2px 8px rgba(0,0,0,0.65);
-  }
-} /* ← これが必要 */
+.hero-sub{
+  margin:6px 0 0;
+  font-size:28px;
+  opacity:.98;
+  text-shadow:0 2px 8px rgba(0,0,0,0.65);
+}
 
     /* ===== SECTION（ここに“CSSだけ”を書く）===== */
 
