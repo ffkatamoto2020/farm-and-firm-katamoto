@@ -824,55 +824,6 @@ html{ scroll-behavior: smooth; }
   margin: 0 0 14px;
 }
 
-/* ===== 右下：北海道ミニマップ ===== */
-.about-map{
-  position: absolute;
-  right: clamp(18px, 4vw, 46px);
-  bottom: clamp(18px, 4vw, 42px);
-  width: clamp(120px, 18vw, 190px);
-  opacity: .88;
-  pointer-events: none;
-  filter: drop-shadow(0 10px 20px rgba(0,0,0,.20));
-  z-index: 2;
-}
-    
-.about-map img{
-  width:100%;
-  height:auto;
-  display:block;
-}
-
-/* 伊達市のピン */
-.about-map .date-pin{
-  position:absolute;
-  width:10px;
-  height:10px;
-  border-radius:50%;
-  background:#fff;
-
-  left:63%;
-  top:70%;
-
-  transform:translate(-50%,-50%);
-  box-shadow:0 0 0 3px rgba(255,255,255,.35);
-}
-
-/* 伊達市ラベル */
-.about-map .date-label{
-  position:absolute;
-
-  left:67%;
-  top:70%;
-
-  transform:translateY(-50%);
-
-  color:#fff;
-  font-size:14px;
-  font-weight:800;
-  letter-spacing:.06em;
-  text-shadow:0 6px 16px rgba(0,0,0,.35);
-}
-    
 /* スマホは少し控えめに */
 @media (max-width: 700px){
   .about-map{
@@ -1089,17 +1040,6 @@ html{ scroll-behavior: smooth; }
         野菜を健康に育てるにはこれ以上ない環境で栽培しています。
       </p>
     </div>
-
-<!-- HOKKAIDO MAP -->
-<div class="about-map">
-
-  <img src="/images/hokkaidomap.png" alt="北海道">
-
-  <div class="date-pin"></div>
-  <div class="date-label">伊達市</div>
-
-</div>
-
 </section>
 
 <!-- ==== PRODUCTS SECTION ==== -->
