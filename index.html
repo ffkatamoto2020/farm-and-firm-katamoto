@@ -305,6 +305,30 @@ section{ scroll-margin-top: calc(var(--headerH) + 18px); }
 @media (max-width: 900px){
   .insta-grid{ grid-template-columns: 1fr; }
 }
+
+/* ==== CONTACT ==== */
+
+.contact-card{
+  margin-top:14px;
+  background: rgba(255,255,255,.78);
+  border:1px solid var(--line);
+  border-radius:var(--r-lg);
+  padding:16px;
+  box-shadow:var(--shadow);
+}
+
+.contact-lines p{
+  margin:0 0 8px;
+  line-height:1.7;
+  opacity:.9;
+}
+
+.contact-buttons{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-top:12px;
+}
     
   /* ==== HOW TO BUY SECTION ==== */
 
@@ -1306,6 +1330,34 @@ html{ scroll-behavior: smooth; }
   <img src="images/youtube.jpg" alt="YouTubeおすすめ動画">
 
   </a>
+    </div>
+  </div>
+</section>
+
+<!-- ==== CONTACT SECTION ==== -->
+<section id="contact" class="section alt">
+  <div class="container">
+    <h2 class="section-title">お問い合わせ</h2>
+    <p class="section-lead">
+      ご購入・お取引のご相談（飲食店・ホテル・法人）や、商品についてのご質問はこちらからお願いします。
+    </p>
+
+    <div class="contact-card">
+      <div class="contact-lines">
+        <p><strong>返信目安：</strong>1〜2日以内（繁忙期は少しお時間をいただく場合があります）</p>
+        <p><strong>内容：</strong>ご希望の商品／数量／納品希望日／お届け先（地域）などを書いていただくとスムーズです。</p>
+      </div>
+
+      <div class="contact-buttons">
+        <a class="btn primary lg"
+          href="mailto:ffkatamoto.2020@gmail.com?subject=Farm%26Firm%20かたもとへのお問い合わせ">
+          メールで問い合わせる
+        </a>
+
+        <a class="btn youtube lg" href="https://linktr.ee/ffkatamoto2020" target="_blank" rel="noopener">
+          販売サイト一覧を見る
+        </a>
+      </div>
     </div>
   </div>
 </section>
