@@ -267,6 +267,17 @@ section{ scroll-margin-top: calc(var(--headerH) + 18px); }
 .youtube-card h3{ margin: 0 0 6px; }
 .youtube-card p{ margin: 0; opacity: .88; line-height: 1.7; }
 
+.youtube-thumb{
+  max-width:420px;
+  flex-shrink:0;
+}
+
+.youtube-thumb img{
+  width:100%;
+  height:auto;
+  display:block;
+}
+
 @media (max-width: 700px){
   .about-grid{ grid-template-columns: 1fr; }
   .youtube-card{ flex-direction: column; align-items: stretch; }
