@@ -972,10 +972,12 @@ html{ scroll-behavior: smooth; }
   .product-highlight{
     grid-template-columns: 1fr;
   }
+
   .product-highlight .ph-img{
     height: 180px;
     margin-top: 10px;
   }
+
   /* スマホでは1行固定を解除して読みやすくする */
   .product-highlight .ph-line1,
   .product-highlight .ph-line2{
@@ -984,6 +986,15 @@ html{ scroll-behavior: smooth; }
     text-overflow: clip;
   }
 }
+
+/* スマホでキャッチコピーを1行にする（←入れ子にしない！） */
+@media (max-width: 520px){
+  .hero-copy{
+    white-space: nowrap;
+    font-size: 30px;
+  }
+}
+
   </style>
 
 <link rel="canonical" href="https://farm-and-firm-katamoto.pages.dev/">
@@ -1053,7 +1064,7 @@ html{ scroll-behavior: smooth; }
 </header>
   <section class="hero" id="top">
     <div class="hero-content">
-      <h1>食べごろを、そのまま届ける。</h1>
+      <h1 class="hero-copy">食べごろを、そのまま届ける。</h1>
       <p class="hero-sub">完熟収穫、朝採れ出荷。</p>
     </div>
   </section>
