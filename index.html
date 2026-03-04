@@ -824,6 +824,51 @@ html{ scroll-behavior: smooth; }
   margin: 0 0 14px;
 }
 
+/* ===== 右下：北海道ミニマップ ===== */
+.about-map{
+  position: absolute;
+  right: clamp(18px, 4vw, 46px);
+  bottom: clamp(18px, 4vw, 42px);
+  width: clamp(120px, 18vw, 190px);
+  opacity: .88;
+  pointer-events: none;   /* クリック邪魔しない */
+  filter: drop-shadow(0 10px 20px rgba(0,0,0,.20));
+  z-index: 2;             /* 文字より奥にしたい場合は 1 に */
+}
+
+/* SVGの見た目（“白線・ミニマル”） */
+.about-map svg{ width:100%; height:auto; }
+.about-map .hk{
+  fill: rgba(255,255,255,.06);
+  stroke: rgba(255,255,255,.92);
+  stroke-width: 2.2;
+  stroke-linejoin: round;
+}
+.about-map .dot{
+  fill: #fff;
+}
+.about-map .ring{
+  fill: none;
+  stroke: rgba(255,255,255,.85);
+  stroke-width: 1.6;
+  opacity: .9;
+}
+.about-map .label{
+  fill: rgba(255,255,255,.95);
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: .06em;
+}
+
+/* スマホは少し控えめに */
+@media (max-width: 700px){
+  .about-map{
+    width: 120px;
+    opacity: .78;
+  }
+  .about-map .label{ font-size: 13px; }
+}
+    
 /* ==== PRODUCTS ==== */
 .grid-2{
   display: grid;
@@ -1031,6 +1076,22 @@ html{ scroll-behavior: smooth; }
         野菜を健康に育てるにはこれ以上ない環境で栽培しています。
       </p>
     </div>
+
+<!-- ✅ HOKKAIDO MAP (SVG) -->
+<div class="about-map" aria-hidden="true">
+  <svg viewBox="0 0 220 220" role="img">
+    <!-- 北海道（あえて“ミニマルなシルエット”） -->
+    <path class="hk"
+      d="M120 18 C145 18 166 30 176 48 C184 61 186 80 176 95 C168 106 156 111 150 124 C143 140 151 151 162 158 C174 169 176 184 165 194 C152 207 133 198 120 190 C112 185 105 186 97 193 C83 205 61 206 47 194 C33 181 39 164 52 154 C63 145 66 131 58 120 C49 107 39 95 41 78 C43 58 59 45 75 39 C90 33 98 18 120 18 Z"/>
+
+    <!-- 伊達市（位置は“右下寄りの太平洋側”としてブランド用に配置） -->
+    <circle class="dot" cx="132" cy="150" r="4.8" />
+    <circle class="ring" cx="132" cy="150" r="10" />
+
+    <!-- ラベル -->
+    <text class="label" x="145" y="155">伊達市</text>
+  </svg>
+</div>
   </div>
 </section>
 
