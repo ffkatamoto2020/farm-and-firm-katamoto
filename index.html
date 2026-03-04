@@ -278,6 +278,17 @@ section{ scroll-margin-top: calc(var(--headerH) + 18px); }
   display:block;
 }
 
+/* YouTubeボタン */
+.btn.youtube{
+  background:#ff0000;
+  color:#fff;
+  border:none;
+}
+
+.btn.youtube:hover{
+  background:#cc0000;
+}
+
 @media (max-width: 700px){
   .about-grid{ grid-template-columns: 1fr; }
   .youtube-card{ flex-direction: column; align-items: stretch; }
@@ -1278,15 +1289,13 @@ html{ scroll-behavior: smooth; }
       ▶ 動画を見る
       </a>
 
-      <a class="btn ghost lg"
-      href="https://www.youtube.com/@ShingoKatamoto"
-      target="_blank"
-      rel="noopener">
-      YouTubeチャンネルへ
+      <a class="btn youtube lg"
+        href="https://www.youtube.com/@ShingoKatamoto"
+        target="_blank"
+        rel="noopener">
+        ▶ YouTubeチャンネル
       </a>
-
     </div>
-
   </div>
 
   <a class="youtube-thumb"
