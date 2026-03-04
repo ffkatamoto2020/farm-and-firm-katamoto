@@ -831,35 +831,48 @@ html{ scroll-behavior: smooth; }
   bottom: clamp(18px, 4vw, 42px);
   width: clamp(120px, 18vw, 190px);
   opacity: .88;
-  pointer-events: none;   /* クリック邪魔しない */
+  pointer-events: none;
   filter: drop-shadow(0 10px 20px rgba(0,0,0,.20));
-  z-index: 2;             /* 文字より奥にしたい場合は 1 に */
+  z-index: 2;
+}
+    
+.about-map img{
+  width:100%;
+  height:auto;
+  display:block;
 }
 
-/* SVGの見た目（“白線・ミニマル”） */
-.about-map svg{ width:100%; height:auto; }
-.about-map .hk{
-  fill: rgba(255,255,255,.06);
-  stroke: rgba(255,255,255,.92);
-  stroke-width: 2.2;
-  stroke-linejoin: round;
-}
-.about-map .dot{
-  fill: #fff;
-}
-.about-map .ring{
-  fill: none;
-  stroke: rgba(255,255,255,.85);
-  stroke-width: 1.6;
-  opacity: .9;
-}
-.about-map .label{
-  fill: rgba(255,255,255,.95);
-  font-size: 14px;
-  font-weight: 800;
-  letter-spacing: .06em;
+/* 伊達市のピン */
+.about-map .date-pin{
+  position:absolute;
+  width:10px;
+  height:10px;
+  border-radius:50%;
+  background:#fff;
+
+  left:63%;
+  top:70%;
+
+  transform:translate(-50%,-50%);
+  box-shadow:0 0 0 3px rgba(255,255,255,.35);
 }
 
+/* 伊達市ラベル */
+.about-map .date-label{
+  position:absolute;
+
+  left:67%;
+  top:70%;
+
+  transform:translateY(-50%);
+
+  color:#fff;
+  font-size:14px;
+  font-weight:800;
+  letter-spacing:.06em;
+  text-shadow:0 6px 16px rgba(0,0,0,.35);
+}
+    
 /* スマホは少し控えめに */
 @media (max-width: 700px){
   .about-map{
@@ -1077,22 +1090,16 @@ html{ scroll-behavior: smooth; }
       </p>
     </div>
 
-<!-- ✅ HOKKAIDO MAP (SVG) -->
-<div class="about-map" aria-hidden="true">
-  <svg viewBox="0 0 220 220" role="img">
-    <!-- 北海道（あえて“ミニマルなシルエット”） -->
-    <path class="hk"
-      d="M120 18 C145 18 166 30 176 48 C184 61 186 80 176 95 C168 106 156 111 150 124 C143 140 151 151 162 158 C174 169 176 184 165 194 C152 207 133 198 120 190 C112 185 105 186 97 193 C83 205 61 206 47 194 C33 181 39 164 52 154 C63 145 66 131 58 120 C49 107 39 95 41 78 C43 58 59 45 75 39 C90 33 98 18 120 18 Z"/>
+<!-- HOKKAIDO MAP -->
+<div class="about-map">
 
-    <!-- 伊達市（位置は“右下寄りの太平洋側”としてブランド用に配置） -->
-    <circle class="dot" cx="132" cy="150" r="4.8" />
-    <circle class="ring" cx="132" cy="150" r="10" />
+  <img src="/images/hokkaido.png" alt="北海道">
 
-    <!-- ラベル -->
-    <text class="label" x="145" y="155">伊達市</text>
-  </svg>
+  <div class="date-pin"></div>
+  <div class="date-label">伊達市</div>
+
 </div>
-  </div>
+
 </section>
 
 <!-- ==== PRODUCTS SECTION ==== -->
