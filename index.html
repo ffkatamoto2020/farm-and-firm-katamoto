@@ -671,8 +671,8 @@ section{ scroll-margin-top: calc(var(--headerH) + 18px); }
 }
 
 .buy-site img{
-  width: 120px;
-  height: auto;
+  width: 80px;
+  height: 80px;
   border-radius: 12px;
   object-fit: contain;
   border: 1px solid rgba(31,42,36,.10);
@@ -680,6 +680,12 @@ section{ scroll-margin-top: calc(var(--headerH) + 18px); }
   padding: 6px;
 }
 
+/* COOP MY FARMロゴだけ少し大きく */
+.buy-site img.logo-coop{
+  width: 120px;   /* ここを 130px とかにして微調整OK */
+  height: 80px;   /* 高さは共通のままでOK */
+}
+    
 /* ==== Marche photos（横2枚） ==== */
 .marche-photo-single{
   max-width: 420px;
@@ -1265,7 +1271,7 @@ display:inline-block;
 
         <!-- COOP MYFARM：URLと画像を後で差し替え -->
         <a class="buy-site" href="#" onclick="window.open(COOPMYFARM_URL, '_blank'); return false;" rel="noopener">
-          <img src="/images/logo-mark-type.png" alt="COOP MY FARM 生産者ページ" loading="lazy" style="width:120px;">
+          <img src="/images/logo-mark-type.png" alt="COOP MY FARM 生産者ページ" loading="lazy" class="logo-coop">
           <div class="meta">
             <div class="name">COOP MY FARM</div>
             <div class="desc">生産者ページを見る</div>
