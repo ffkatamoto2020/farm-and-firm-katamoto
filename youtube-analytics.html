@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>ShingoKatamoto YouTube Analytics | Farm&Firm かたもと</title>
+
+  <meta name="description" content="ShingoKatamoto YouTube Analyticsは、Farm&Firm かたもとが管理するYouTubeチャンネルの分析を目的とした内部向けツールです。">
+
+  <link rel="canonical" href="https://ffkatamoto.com/youtube-analytics.html">
+
+  <style>
+    :root{
+      --bg:#fbfaf6;
+      --surface:#fff;
+      --text:#1f2a24;
+      --muted:#5a6a61;
+      --line:rgba(31,42,36,.12);
+      --brand:#3A8B57;
+      --container:900px;
+      --px:clamp(16px,3vw,40px);
+      --headerH:64px;
+    }
+
+    *{
+      box-sizing:border-box;
+    }
+
+    body{
+      margin:0;
+      font-family:-apple-system, BlinkMacSystemFont,
+        "Hiragino Kaku Gothic ProN", "Hiragino Sans",
+        "Noto Sans JP", sans-serif;
+      color:var(--text);
+      background:var(--bg);
+      line-height:1.9;
+      padding-top:var(--headerH);
+    }
+
+    .site-header{
+      position:fixed;
+      top:0;
+      left:0;
+      right:0;
+      height:var(--headerH);
+      z-index:9999;
+      background:rgba(251,250,246,.90);
+      backdrop-filter:blur(10px);
+      -webkit-backdrop-filter:blur(10px);
+      border-bottom:1px solid var(--line);
+    }
+
+    .site-header .inner{
+      max-width:1100px;
+      height:100%;
+      margin:0 auto;
+      padding:0 var(--px);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+    }
+
+    .brand{
+      color:var(--text);
+      text-decoration:none;
+      font-weight:900;
+    }
+
+    .back-link{
+      color:var(--brand);
+      text-decoration:none;
+      font-weight:700;
+      font-size:14px;
+    }
+
+    main{
+      max-width:var(--container);
+      margin:0 auto;
+      padding:clamp(48px,7vw,80px) var(--px);
+    }
+
+    .page-title{
+      margin:0 0 12px;
+      font-size:clamp(28px,4vw,42px);
+      line-height:1.35;
+    }
+
+    .lead{
+      margin:0 0 36px;
+      color:var(--muted);
+    }
+
+    .card{
+      background:rgba(255,255,255,.82);
+      border:1px solid var(--line);
+      border-radius:20px;
+      padding:clamp(22px,4vw,40px);
+      box-shadow:0 18px 50px rgba(0,0,0,.07);
+    }
+
+    .card section + section{
+      margin-top:36px;
+    }
+
+    .card h2{
+      margin:0 0 12px;
+      padding-left:12px;
+      border-left:4px solid var(--brand);
+      font-size:clamp(19px,2.4vw,24px);
+    }
+
+    .card p{
+      margin:0 0 12px;
+    }
+
+    .card ul{
+      margin:10px 0 0;
+      padding-left:1.4em;
+    }
+
+    .card li{
+      margin:5px 0;
+    }
+
+    .scope{
+      overflow-wrap:anywhere;
+      font-family:ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size:.92em;
+    }
+
+    .policy-link{
+      display:inline-block;
+      margin-top:10px;
+      color:var(--brand);
+      font-weight:800;
+    }
+
+    footer{
+      text-align:center;
+      padding:30px var(--px);
+      background:rgba(31,42,36,.06);
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    @media (max-width:600px){
+      .brand{
+        font-size:14px;
+      }
+
+      .back-link{
+        font-size:12px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="site-header">
+  <div class="inner">
+    <a class="brand" href="/">Farm&amp;Firm かたもと</a>
+    <a class="back-link" href="/">農園ホームへ戻る</a>
+  </div>
+</header>
+
+<main>
+
+  <h1 class="page-title">ShingoKatamoto YouTube Analytics</h1>
+
+  <p class="lead">
+    Farm&amp;Firm かたもとが管理するYouTubeチャンネルの分析を目的とした内部向けツールです。
+  </p>
+
+  <div class="card">
+
+    <section>
+      <h2>このアプリについて</h2>
+
+      <p>
+        ShingoKatamoto YouTube Analyticsは、
+        Farm&amp;Firm かたもとが管理するYouTubeチャンネル
+        「サラリーマンが農家になってみた」の運営改善を目的として利用する分析ツールです。
+      </p>
+
+      <p>
+        YouTube Analytics API等を利用し、
+        チャンネルおよび動画の視聴状況を取得・集計します。
+      </p>
+    </section>
+
+    <section>
+      <h2>主な機能</h2>
+
+      <ul>
+        <li>YouTubeチャンネルおよび動画データの取得</li>
+        <li>視聴回数、総再生時間等の分析</li>
+        <li>チャンネル登録者数および増減の確認</li>
+        <li>動画ごとの実績比較</li>
+        <li>取得データのGoogleスプレッドシートへの保存</li>
+        <li>動画企画、制作、チャンネル運営改善のための分析</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Googleユーザーデータを利用する目的</h2>
+
+      <p>
+        本アプリは、当園が管理するYouTubeチャンネルの運営状況を把握し、
+        動画制作、企画立案およびチャンネル運営改善に活用するため、
+        Google OAuthを通じてYouTubeおよびYouTube Analyticsのデータへアクセスします。
+      </p>
+
+      <p>
+        取得したデータは、原則として当園が管理するYouTubeチャンネルの分析目的で利用します。
+      </p>
+    </section>
+
+    <section>
+      <h2>利用するOAuth権限</h2>
+
+      <p>本アプリでは、以下の読み取り専用権限を利用します。</p>
+
+      <ul>
+        <li class="scope">https://www.googleapis.com/auth/youtube.readonly</li>
+        <li class="scope">https://www.googleapis.com/auth/yt-analytics.readonly</li>
+      </ul>
+
+      <p>
+        これらの権限を利用して、動画を投稿、編集または削除することはありません。
+      </p>
+    </section>
+
+    <section>
+      <h2>データの取り扱い</h2>
+
+      <p>
+        Google APIを通じて取得したデータは、
+        チャンネル分析および運営改善のために利用し、
+        第三者へ販売したり、広告配信目的で提供したりすることはありません。
+      </p>
+
+      <p>
+        データの保存、管理、削除、Googleアカウントのアクセス権限の取り消し方法等については、
+        プライバシーポリシーをご確認ください。
+      </p>
+
+      <a class="policy-link" href="/privacy.html">
+        プライバシーポリシーを見る
+      </a>
+    </section>
+
+    <section>
+      <h2>お問い合わせ</h2>
+
+      <p>
+        本アプリおよびデータの取り扱いに関するお問い合わせは、
+        以下までお願いいたします。
+      </p>
+
+      <p>
+        Farm&amp;Firm かたもと<br>
+        メール：
+        <a href="mailto:ffkatamoto.2020@gmail.com">
+          ffkatamoto.2020@gmail.com
+        </a>
+      </p>
+    </section>
+
+  </div>
+
+</main>
+
+<footer>
+  © 2026 Farm&amp;Firm かたもと
+</footer>
+
+</body>
+</html>
